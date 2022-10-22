@@ -16,7 +16,7 @@ const RealEstateCard = (props) => {
             "https://a0.muscache.com/im/pictures/miso/Hosting-629170893088045571/original/b4542d4a-2487-47a8-9035-0ba2858213d8.jpeg?im_w=720"
           }
           width={"286px"}
-          height={"286px"}
+          height={"290px"}
           layout='responsive'
           className='rounded-xl'
         />
