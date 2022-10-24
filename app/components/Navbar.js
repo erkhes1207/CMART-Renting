@@ -4,9 +4,9 @@ import { useRouter } from "next/router";
 const Navbar = () => {
   const router = useRouter();
   return (
-    <div className='flex justify-center items-center w-full h-20 border border-b-gray-200'>
+    <div className="flex justify-center items-center w-full h-20 border border-b-gray-200">
       <div
-        className='flex items-center max-w-7xl justify-between w-full cursor-pointer'
+        className="flex items-center max-w-7xl justify-between w-full cursor-pointer"
         onClick={() => router.push("/")}
       >
         <Image
@@ -15,13 +15,19 @@ const Navbar = () => {
           }
           width={"100px"}
           height={"30px"}
-          layout='fixed'
-          alt='Logo'
-          className=''
+          layout="fixed"
+          alt="Logo"
+          className=""
         />
-        <div>
-          <button className='flex items-center justify-center px-4 py-2 border rounded-2xl'>
-            <span>Connect a wallet</span>
+        <div className="flex gap-2">
+          <button className="flex items-center px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	 hover:text-[#f82f5d] ">
+            Register
+          </button>
+          <button className="flex items-center px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	 hover:text-[#f82f5d] ">
+            Host
+          </button>
+          <button className="flex items-center px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	 hover:text-[#f82f5d] ">
+            Connect a wallet
           </button>
         </div>
       </div>

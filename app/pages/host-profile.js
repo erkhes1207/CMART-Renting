@@ -116,7 +116,7 @@ export default function HostProfile() {
                 Hello! My daughter Harper and I are so glad you have chosen to
                 look at our yurts here in Cantwell, AK. We work hard to bring
                 Alaska’s beauty to all who stay with us while still supplying
-                some of the…{" "}
+                some of the…
                 <a href="" className="font-semibold">
                   read more
                 </a>
