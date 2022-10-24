@@ -126,12 +126,12 @@ export default function RealEstateForm() {
                     id="months"
                     className="w-[368px] h-12 px-3 border rounded-md focus: outline-none ml-11"
                   >
-                    <option value="month-1">1 Month</option>
-                    <option value="month-2">2 Months</option>
-                    <option value="month-3">3 Months</option>
-                    <option value="month-4">4 Months</option>
-                    <option value="month-5">5 Months</option>
-                    <option value="month-6">6 Months</option>
+                    <option value="month-1">1+1 Months</option>
+                    <option value="month-2">2+1 Months</option>
+                    <option value="month-3">3+1 Months</option>
+                    <option value="month-4">4+1 Months</option>
+                    <option value="month-5">5+1 Months</option>
+                    <option value="month-6">6+1 Months</option>
                   </select>
                 </div>
               </div>

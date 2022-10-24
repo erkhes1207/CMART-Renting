@@ -4,21 +4,12 @@ import Layout from "../../components/Layout";
 const RealEstateDetail = () => {
   return (
     <Layout>
-<<<<<<< HEAD
-      <div className="flex w-full h-full justify-center items-center">
+      <div className="flex w-full h-full justify-center items-center min-h-screen mb-10">
         <div className="flex max-w-7xl w-full gap-5">
           <section className="overflow-hidden text-gray-700 w-full">
             <div className="lg:px-28 w-full">
               <div className="flex flex-col my-4">
-                <span className="text-2xl font-semibold text-black">
-=======
-      <div className='flex w-full h-full justify-center items-center min-h-screen mb-10'>
-        <div className='flex max-w-7xl w-full gap-5'>
-          <section className='overflow-hidden text-gray-700 w-full'>
-            <div className='lg:px-28 w-full'>
-              <div className='flex flex-col my-4'>
-                <span className='text-3xl font-medium text-black'>
->>>>>>> 0de92f1d959cee18160a576b4135bd9f252daad1
+                <span className="text-3xl font-medium text-black">
                   Яармагийн belmonte хотхонд тавилгатай 3 өрөө
                 </span>
                 <div className="flex w-full justify-between">
@@ -88,11 +79,11 @@ const RealEstateDetail = () => {
                   </div>
                 </div>
               </div>
-              <div className='grid grid-cols-10'>
-                <div className='col-span-6 my-4'>
-                  <div className='flex justify-between w-full mt-4'>
-                    <div className='flex flex-col gap-1'>
-                      <span className='text-xl font-semibold'>
+              <div className="grid grid-cols-10">
+                <div className="col-span-6 my-4">
+                  <div className="flex justify-between w-full mt-4">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-xl font-semibold">
                         Entire home hosted by Pekka
                       </span>
                       <span>6 guests * 3 bedrooms * 6 beds * 1 bath</span>
@@ -103,89 +94,89 @@ const RealEstateDetail = () => {
                       }
                       width={"50px"}
                       height={"50px"}
-                      alt='Profile image'
-                      layout='fixed'
-                      className='rounded-full'
+                      alt="Profile image"
+                      layout="fixed"
+                      className="rounded-full"
                     />
                   </div>
-                  <div className='h-[1px] w-full my-5 bg-gray-300'></div>
-                  <div className='flex flex-col gap-4 w-full'>
-                    <div className='flex gap-4 items-start'>
-                      <svg width='2em' height='2em' viewBox='0 0 24 24'>
+                  <div className="h-[1px] w-full my-5 bg-gray-300"></div>
+                  <div className="flex flex-col gap-4 w-full">
+                    <div className="flex gap-4 items-start">
+                      <svg width="2em" height="2em" viewBox="0 0 24 24">
                         <path
-                          fill='currentColor'
-                          d='M11 13q.425 0 .713-.288Q12 12.425 12 12t-.287-.713Q11.425 11 11 11t-.712.287Q10 11.575 10 12t.288.712Q10.575 13 11 13Zm-4 8v-2l6-1V6.875q0-.375-.225-.675q-.225-.3-.575-.35L7 5V3l5.5.9q1.1.2 1.8 1.025T15 6.85v12.8Zm-4 0v-2h2V5q0-.85.588-1.425Q6.175 3 7 3h10q.85 0 1.425.575Q19 4.15 19 5v14h2v2Zm4-2h10V5H7Z'
+                          fill="currentColor"
+                          d="M11 13q.425 0 .713-.288Q12 12.425 12 12t-.287-.713Q11.425 11 11 11t-.712.287Q10 11.575 10 12t.288.712Q10.575 13 11 13Zm-4 8v-2l6-1V6.875q0-.375-.225-.675q-.225-.3-.575-.35L7 5V3l5.5.9q1.1.2 1.8 1.025T15 6.85v12.8Zm-4 0v-2h2V5q0-.85.588-1.425Q6.175 3 7 3h10q.85 0 1.425.575Q19 4.15 19 5v14h2v2Zm4-2h10V5H7Z"
                         ></path>
                       </svg>
-                      <div className='flex flex-col'>
-                        <span className='text-md font-semibold'>
+                      <div className="flex flex-col">
+                        <span className="text-md font-semibold">
                           Self check-in
                         </span>
-                        <span className='text-sm'>
+                        <span className="text-sm">
                           Check yourself in with the lockbox.
                         </span>
                       </div>
                     </div>
-                    <div className='flex gap-4 items-start'>
-                      <svg width='2em' height='2em' viewBox='0 0 48 48'>
+                    <div className="flex gap-4 items-start">
+                      <svg width="2em" height="2em" viewBox="0 0 48 48">
                         <g
-                          fill='none'
-                          stroke='currentColor'
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                          strokeWidth='4'
+                          fill="none"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="4"
                         >
-                          <circle cx='24' cy='12' r='8'></circle>
-                          <path d='M42 44c0-9.941-8.059-18-18-18S6 34.059 6 44'></path>
+                          <circle cx="24" cy="12" r="8"></circle>
+                          <path d="M42 44c0-9.941-8.059-18-18-18S6 34.059 6 44"></path>
                         </g>
                       </svg>
-                      <div className='flex flex-col'>
-                        <span className='text-md font-semibold'>
+                      <div className="flex flex-col">
+                        <span className="text-md font-semibold">
                           Pekka is a Superhost
                         </span>
-                        <span className='text-sm'>
+                        <span className="text-sm">
                           Superhosts are experienced, highly rated hosts who are
                           committed to providing great stays for guests.
                         </span>
                       </div>
                     </div>
-                    <div className='flex gap-4 items-start'>
-                      <svg width='2em' height='2em' viewBox='0 0 512 512'>
+                    <div className="flex gap-4 items-start">
+                      <svg width="2em" height="2em" viewBox="0 0 512 512">
                         <path
-                          fill='currentColor'
-                          d='M253.924 127.592a64 64 0 1 0 64 64a64.073 64.073 0 0 0-64-64Zm0 96a32 32 0 1 1 32-32a32.037 32.037 0 0 1-32 32Z'
+                          fill="currentColor"
+                          d="M253.924 127.592a64 64 0 1 0 64 64a64.073 64.073 0 0 0-64-64Zm0 96a32 32 0 1 1 32-32a32.037 32.037 0 0 1-32 32Z"
                         ></path>
                         <path
-                          fill='currentColor'
-                          d='M376.906 68.515A173.922 173.922 0 0 0 108.2 286.426l120.907 185.613a29.619 29.619 0 0 0 49.635 0l120.911-185.613a173.921 173.921 0 0 0-22.747-217.911Zm-4.065 200.444l-118.916 182.55l-118.917-182.55c-36.4-55.879-28.593-130.659 18.563-177.817a141.92 141.92 0 0 1 200.708 0c47.156 47.158 54.962 121.938 18.562 177.817Z'
+                          fill="currentColor"
+                          d="M376.906 68.515A173.922 173.922 0 0 0 108.2 286.426l120.907 185.613a29.619 29.619 0 0 0 49.635 0l120.911-185.613a173.921 173.921 0 0 0-22.747-217.911Zm-4.065 200.444l-118.916 182.55l-118.917-182.55c-36.4-55.879-28.593-130.659 18.563-177.817a141.92 141.92 0 0 1 200.708 0c47.156 47.158 54.962 121.938 18.562 177.817Z"
                         ></path>
                       </svg>
-                      <div className='flex flex-col'>
-                        <span className='text-md font-semibold'>
+                      <div className="flex flex-col">
+                        <span className="text-md font-semibold">
                           Great location
                         </span>
-                        <span className='text-sm'>
+                        <span className="text-sm">
                           100% of recent guests gave the location a 5-star
                           rating.
                         </span>
                       </div>
                     </div>
                   </div>
-                  <div className='h-[1px] w-full my-5 bg-gray-300'></div>
+                  <div className="h-[1px] w-full my-5 bg-gray-300"></div>
                   <div>
-                    <span className='text-2xl font-semibold'>
+                    <span className="text-2xl font-semibold">
                       What this place offers
                     </span>
-                    <div className='grid-cols-2'>
-                      <div className='flex flex-col gap-2'>
-                        <svg width='1em' height='1em' viewBox='0 0 24 24'>
+                    <div className="grid-cols-2">
+                      <div className="flex flex-col gap-2">
+                        <svg width="1em" height="1em" viewBox="0 0 24 24">
                           <path
-                            fill='none'
-                            stroke='currentColor'
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth='2'
-                            d='M19 3v12h-5c-.023-3.681.184-7.406 5-12zm0 12v6h-1v-3M8 4v17M5 4v3a3 3 0 1 0 6 0V4'
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M19 3v12h-5c-.023-3.681.184-7.406 5-12zm0 12v6h-1v-3M8 4v17M5 4v3a3 3 0 1 0 6 0V4"
                           ></path>
                         </svg>
                       </div>
@@ -193,7 +184,7 @@ const RealEstateDetail = () => {
                     </div>
                   </div>
                 </div>
-                <div className='col-span-4'></div>
+                <div className="col-span-4"></div>
               </div>
             </div>
           </section>
