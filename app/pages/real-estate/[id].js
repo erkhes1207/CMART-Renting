@@ -7,7 +7,7 @@ const RealEstateDetail = () => {
       <div className='flex w-full h-full justify-center items-center min-h-screen mb-10'>
         <div className='flex max-w-7xl w-full gap-5'>
           <section className='overflow-hidden text-gray-700 w-full'>
-            <div className='lg:px-28 w-full'>
+            <div className='px-28 w-full'>
               <div className='flex flex-col my-4'>
                 <span className='text-3xl font-medium text-black'>
                   Яармагийн belmonte хотхонд тавилгатай 3 өрөө
@@ -15,7 +15,7 @@ const RealEstateDetail = () => {
                 <div className='flex w-full justify-between'>
                   <span className='underline'>Ulaanbaatar, Mongolia</span>
                   <div className='flex items-center gap-5'>
-                    <div className='flex items-center gap-1'>
+                    <div className='flex items-center gap-1 cursor-pointer'>
                       <svg width='1em' height='1em' viewBox='0 0 24 24'>
                         <path
                           fill='none'
@@ -28,7 +28,7 @@ const RealEstateDetail = () => {
                       </svg>
                       <span>Share</span>
                     </div>
-                    <div className='flex items-center gap-1'>
+                    <div className='flex items-center gap-1 cursor-pointer'>
                       <svg width='1em' height='1em' viewBox='0 0 256 256'>
                         <path
                           fill='currentColor'
@@ -163,12 +163,12 @@ const RealEstateDetail = () => {
                     </div>
                   </div>
                   <div className='h-[1px] w-full my-5 bg-gray-300'></div>
-                  <div>
+                  <div className='w-full'>
                     <span className='text-2xl font-semibold'>
                       What this place offers
                     </span>
-                    <div className='grid-cols-2 mt-5'>
-                      <div className='col-span-1 flex flex-col gap-2'>
+                    <div className='flex mt-5 w-full'>
+                      <div className='flex flex-col gap-2'>
                         <div className='flex gap-2'>
                           <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
                             <path
@@ -191,8 +191,6 @@ const RealEstateDetail = () => {
                           </svg>
                           <span>Free parking on premises</span>
                         </div>
-                      </div>
-                      <div className='col-span-1 flex flex-col gap-2'>
                         <div className='flex gap-2'>
                           <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
                             <path
@@ -215,7 +213,134 @@ const RealEstateDetail = () => {
                     </div>
                   </div>
                 </div>
-                <div className='col-span-4'></div>
+                <div className='col-span-4 flex flex-col border rounded-xl max-h-full ml-16 mt-8 p-7 h-52 shadow-xl'>
+                  <div className='flex justify-between items-center'>
+                    <div className='flex items-end gap-1'>
+                      <span className='text-xl'>$108.45</span>
+                      <span className='text-sm'>night</span>
+                    </div>
+                    <div className='flex items-center gap-1 text-sm'>
+                      <svg width='1em' height='1em' viewBox='0 0 24 24'>
+                        <path
+                          fill='currentColor'
+                          d='m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275Z'
+                        ></path>
+                      </svg>
+                      <span>4.95 · 40 reviews</span>
+                    </div>
+                  </div>
+                  <div className='flex flex-col mt-4'>
+                    <div className='flex w-full'>
+                      <div className='flex flex-col w-1/2 border p-2 text-xs rounded-tl-lg cursor-pointer'>
+                        <span>CHECK-IN</span>
+                        <input
+                          type='date'
+                          className='border-none focus:outline-none'
+                        />
+                      </div>
+                      <div className='flex flex-col w-1/2 border p-2 text-xs rounded-tr-lg cursor-pointer'>
+                        <span>CHECK-OUT</span>
+                        <input
+                          type='date'
+                          className='border-none focus:outline-none'
+                        />
+                      </div>
+                    </div>
+                    <button className='flex w-full justify-center py-2 bg-rose-500 rounded-md text-white text-center mt-4'>
+                      <span>Check availability</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className='h-[1px] w-full my-5 bg-gray-300'></div>
+              <div className='flex flex-col mt-10'>
+                <div className='flex gap-2 items-center text-black mb-5'>
+                  <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
+                    <path
+                      fill='currentColor'
+                      d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z'
+                    ></path>
+                  </svg>
+                  <span className='text-xl'>4.95 · 40 reviews</span>
+                </div>
+                <div className='flex items-center w-full gap-10'>
+                  <div className='flex flex-col w-1/2 '>
+                    <div className='flex items-center justify-between w-full'>
+                      <span>Cleanliness</span>
+                      <div className='flex items-center h-full gap-2'>
+                        <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
+                          <div
+                            className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
+                            style={{ width: "45%" }}
+                          ></div>
+                        </div>
+                        <span>4.8</span>
+                      </div>
+                    </div>
+                    <div className='flex items-center justify-between w-full'>
+                      <span>Communication</span>
+                      <div className='flex items-center h-full gap-2'>
+                        <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
+                          <div
+                            className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
+                            style={{ width: "45%" }}
+                          ></div>
+                        </div>
+                        <span>4.8</span>
+                      </div>
+                    </div>
+                    <div className='flex items-center justify-between w-full'>
+                      <span>Check-in</span>
+                      <div className='flex items-center h-full gap-2'>
+                        <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
+                          <div
+                            className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
+                            style={{ width: "45%" }}
+                          ></div>
+                        </div>
+                        <span>4.8</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='flex flex-col w-1/2 '>
+                    <div className='flex items-center justify-between w-full'>
+                      <span>Cleanliness</span>
+                      <div className='flex items-center h-full gap-2'>
+                        <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
+                          <div
+                            className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
+                            style={{ width: "45%" }}
+                          ></div>
+                        </div>
+                        <span>4.8</span>
+                      </div>
+                    </div>
+                    <div className='flex items-center justify-between w-full'>
+                      <span>Communication</span>
+                      <div className='flex items-center h-full gap-2'>
+                        <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
+                          <div
+                            className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
+                            style={{ width: "45%" }}
+                          ></div>
+                        </div>
+                        <span>4.8</span>
+                      </div>
+                    </div>
+                    <div className='flex items-center justify-between w-full'>
+                      <span>Check-in</span>
+                      <div className='flex items-center h-full gap-2'>
+                        <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
+                          <div
+                            className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
+                            style={{ width: "45%" }}
+                          ></div>
+                        </div>
+                        <span>4.8</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
