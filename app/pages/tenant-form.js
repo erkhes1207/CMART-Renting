@@ -29,60 +29,58 @@ export default function TenantForm() {
                 />
               </div>
               <div className="space-y-2">
-                <div className="flex">
-                  <h3 className="uppercase text-sm font-semibold">Phone</h3>
-                  <h3 className="uppercase text-sm font-semibold ml-[368px]">
-                    Email
-                  </h3>
+                <div className="flex justify-between">
+                  <span className="uppercase text-sm font-semibold">Phone</span>
+                  <span className="uppercase text-sm font-semibold mr-80">
+                    Number
+                  </span>
                 </div>
-                <div className="flex">
+                <div className="flex justify-between gap-4">
                   <input
                     type="text"
-                    className="w-[365px] h-12 px-3 border rounded-md focus:outline-none"
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
                     placeholder="99310720"
                   />
                   <input
                     type="text"
-                    className="w-[365px] h-12 px-3 border rounded-md focus:outline-none ml-12"
+                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
                     placeholder="chingunee.dev@gmail.com"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <div className="flex">
-                  <h3 className="uppercase text-sm font-semibold ">
-                    Id number
-                  </h3>
+                <div className="flex justify-between">
+                  <span className="uppercase text-sm font-semibold">
+                    ID Number
+                  </span>
                   <label
                     htmlFor="genders"
-                    className="uppercase text-sm font-semibold ml-[338px]"
+                    className="uppercase text-sm font-semibold mr-80"
                   >
                     Gender
                   </label>
                 </div>
-                <div className="flex">
+                <div className="flex justify-between gap-4">
                   <input
                     type="text"
-                    className="w-[368px] h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="SSH03271029"
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="SSH0321212"
                   />
                   <select
                     name="genders"
                     id="genders"
-                    className="w-[368px] h-12 px-3 border rounded-md focus: outline-none ml-11"
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
                   >
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
                 </div>
               </div>
-              <div className="space-y-2">
+
+              <div className="space-y-2 w-full">
                 <h3 className="uppercase text-sm font-semibold">Bio</h3>
                 <textarea
-                  className="border rounded-md pl-2 pt-2"
-                  name=""
-                  id=""
-                  cols="103"
+                  className="border rounded-md pl-2 pt-2 w-full"
                   rows="10"
                   placeholder="Write a short and sweet description about yourself..."
                 ></textarea>

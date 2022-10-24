@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Diverse-Hackathons/CMART-Renting/issues"
   },
-  "homepage": "https://github.com/Diverse-Hackathons/CMART-Renting#readme"
+  "homepage": "https://github.com/Diverse-Hackathons/CMART-Renting#readme",
+  "devDependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/preset-env": "^7.19.4"
+  }
 }
