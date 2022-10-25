@@ -64,7 +64,7 @@ contract RealEstateFactory is AccessControl {
     return addressToHostRealEstateIds[_host];
   }
 
-  function getAllRealEstates() external view returns(uint[] memory) {
+  function getAllRealEstateIds() external view returns(uint[] memory) {
     return realEstateIds;
   }
 
