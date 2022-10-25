@@ -6,8 +6,7 @@ import {
   checkConnected,
   connectMetamask,
 } from "../slices/metamaskSlice";
-import Metamask from "../../assets/metamask.png";
-import Layout from "../Layout";
+import Metamask from "../assets/metamask.png";
 
 const CheckMetamask = ({ children }) => {
   const metamask = useSelector((state) => state.metamask);

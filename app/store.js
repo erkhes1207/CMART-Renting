@@ -11,7 +11,8 @@ import {
   persistStore,
 } from "redux-persist";
 
-import { metamaskReducer } from "./components/slices/metamaskSlice";
+import { metamaskReducer } from "./slices/metamaskSlice";
+import { alertReducer } from "./slices/alertSlice";
 
 const persistConfig = {
   key: "root",
@@ -22,6 +23,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   metamask: metamaskReducer,
+  alert: alertReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
