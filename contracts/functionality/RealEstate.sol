@@ -51,6 +51,10 @@ contract RealEstate {
       return address(this).balance;
     }
 
+    function getRealEstateDetails() external view returns(RealEstateDetails memory) {
+      return realEstateDetails;
+    }
+
     // function cancelRealEstate() public onlyRealEstateOwner {
     //     realEstateStatus = RealEstateStatus.Canceled;
     //     emit RealEstateStatusChanged(RealEstateStatus.Canceled);
