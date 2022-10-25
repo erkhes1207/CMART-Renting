@@ -258,7 +258,7 @@
   },
   {
     "inputs": [],
-    "name": "getAllRealEstates",
+    "name": "getAllRealEstateIds",
     "outputs": [
       {
         "internalType": "uint256[]",
