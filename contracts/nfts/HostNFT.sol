@@ -33,6 +33,7 @@ contract HostNFT is ERC721, AccessControl, IHostNFT {
     function hostMint(address to, UserDetails calldata _userDetails)
         external
         override
+        onlyRole(MINTER_ROLE)
         returns (uint)
     {
         uint256 tokenId = _tokenIdCounter.current();
@@ -70,6 +71,8 @@ contract HostNFT is ERC721, AccessControl, IHostNFT {
             "Review must be between 1-5"
         );
         reviewsFromHost[_host].push(_userReviews);
+
+        emit hostGotReviewed(_host, _userReviews);
     }
 
     function reviewFromTenant(address _host, UserReviews calldata _userReviews)
@@ -80,6 +83,8 @@ contract HostNFT is ERC721, AccessControl, IHostNFT {
             "Review must be between 1-5"
         );
         reviewsFromHost[_host].push(_userReviews);
+
+        emit hostGotReviewed(_host, _userReviews);
     }
 
     // The following functions are overrides required by Solidity.

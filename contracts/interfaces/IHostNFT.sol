@@ -12,7 +12,7 @@ interface IHostNFT is IERC165 {
     
     event hostMinted (address indexed _to, uint256 indexed _tokenId);
     event hostBurned (uint256 indexed _tokenId);
-    event hostGotReviewed (address indexed _from, address indexed _to, uint256 indexed _tokenId);
+    event hostGotReviewed (address indexed _host, UserReviews);
 
     function hostMint(address to, UserDetails calldata _userDetails) external returns (uint);
 

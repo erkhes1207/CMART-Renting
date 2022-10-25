@@ -60,7 +60,7 @@ contract RealEstateFactory is AccessControl {
     return addressToHostRealEstateIds[msg.sender];
   }
 
-  function getHostRealEstates(address _host) external view returns(uint[] memory){
+  function getHostRealEstateIds(address _host) external view returns(uint[] memory){
     return addressToHostRealEstateIds[_host];
   }
 
@@ -70,10 +70,6 @@ contract RealEstateFactory is AccessControl {
 
   function getRealEstatesLength() external view returns(uint) {
     return realEstateIds.length;
-  }
-
-  function getRealEstateDetails(uint _realEstateId) external view returns(RealEstateDetails memory) {
-    return realEstates[_realEstateId];
   }
 
   modifier isHost(){
