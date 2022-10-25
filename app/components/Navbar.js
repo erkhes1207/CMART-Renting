@@ -20,10 +20,16 @@ const Navbar = () => {
           className=""
         />
         <div className="flex gap-2">
-          <button className="flex items-center px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	 hover:text-[#f82f5d] ">
+          <button
+            className="flex items-center px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	 hover:text-[#f82f5d] "
+            onClick={() => router.push("/host-form")}
+          >
             Register
           </button>
-          <button className="flex items-center px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	 hover:text-[#f82f5d] ">
+          <button
+            className="flex items-center px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	 hover:text-[#f82f5d] "
+            onClick={() => router.push("/create-real-estate")}
+          >
             Host
           </button>
           <button className="flex items-center px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	 hover:text-[#f82f5d] ">
