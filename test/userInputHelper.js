@@ -16,10 +16,15 @@ async function init() {
     const state = "Ulaanbaatar";
     const zipCode = "19571";
     
-    const emergencyName = "Chingun";
-    const emergencyRelationship = "Friend";
-    const emergencyEmail = "chingunee.dev@gmail.com";
-    const emergencyPhoneNumber = 11223344;
+    // const emergencyName = "Chingun";
+    // const emergencyRelationship = "Friend";
+    // const emergencyEmail = "chingunee.dev@gmail.com";
+    // const emergencyPhoneNumber = 11223344;
+    
+    const emergencyName = "";
+    const emergencyRelationship = "";
+    const emergencyEmail = "";
+    const emergencyPhoneNumber = 0;
     
     const blockNumber = await ethers.provider.getBlockNumber()
     const block = await ethers.provider.getBlock(blockNumber)

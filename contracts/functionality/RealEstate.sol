@@ -18,7 +18,6 @@ contract RealEstate {
     uint256 public realEstateId;
     address public organizer;
     RealEstateDetails public realEstateDetails;
-    RealEstateNftDetails public realEstateNftDetails;
     RealEstateStatus public realEstateStatus;
 
     constructor(
@@ -34,9 +33,9 @@ contract RealEstate {
     }
 
     function mint() external payable {
-        require(realEstateNftDetails.price == msg.value, "PRICE WRONG");
+        // require(realEstateNftDetails.price == msg.value, "PRICE WRONG");
         require(nft.balanceOf(msg.sender) == 0, "YOU ALREADY HAVE REALESTATE NFT");
-        require(realEstateNftDetails.limit >= nft.totalSupply(), "LIMIT REACHED");
+        // require(realEstateNftDetails.limit >= nft.totalSupply(), "LIMIT REACHED");
 
         nft.mint(msg.sender);
         emit NftMinted(msg.sender);

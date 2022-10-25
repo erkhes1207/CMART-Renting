@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 import "./functionality/RealEstate.sol";
 
 import "./structs/RealEstateDetails.sol";
-import "./structs/RealEstateNftDetails.sol";
+// import "./structs/RealEstateNftDetails.sol";
 
 import "../contracts/HostFactory.sol";
 import "./interfaces/IHostNFT.sol";

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import "../structs/RealEstateDetails.sol";
-import "../structs/RealEstateNftDetails.sol";
+// import "../structs/RealEstateNftDetails.sol";
 
 interface IRentableNFT {
 

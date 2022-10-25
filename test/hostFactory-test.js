@@ -16,6 +16,7 @@ describe("HostFactory - Functionality Test", function () {
 
   it("checks host creation process - Success/Failure", async function () {
     const inputDetails = await init();
+    console.log(inputDetails)
 
     await expect(this.hostFactoryContract.connect(this.redu).createHost(inputDetails)).to.emit(this.hostFactoryContract, "hostNFTMinted").withArgs(this.redu.address, 0);
 

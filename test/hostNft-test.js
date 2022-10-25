@@ -1,5 +1,6 @@
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
+const init = require("./userInputHelper");
 
 describe("HostNft - Functionality Test", function () {
 
@@ -7,14 +8,11 @@ describe("HostNft - Functionality Test", function () {
     let accounts = await ethers.getSigners();
     this.redu = accounts[0]
     this.ireedui = accounts[1]
+    const inputDetails = await init();
     this.HostFactory = await ethers.getContractFactory("HostFactory");
     this.hostFactoryContract = await this.HostFactory.deploy();
     await this.hostFactoryContract.deployed();
-    await this.hostFactoryContract.connect(this.redu).createHost(
-      "mnkhod",
-      "https://www.linkedin.com/in/mnkhod/",
-      "mnkhod.dev@gmail.com"
-    )
+    await this.hostFactoryContract.connect(this.redu).createHost(inputDetails)
   });
 
     it("checks nft's details", async function () {
@@ -32,6 +30,7 @@ describe("HostNft - Functionality Test", function () {
     expect(await this.hostFactoryContract.idToHostAddress(nftId)).to.equal(this.redu.address);
     expect(await this.hostFactoryContract.hostHasNft(this.redu.address)).to.equal(true);
     expect(await this.hostFactoryContract.addressToHostId(this.redu.address)).to.equal(0);
+    
   });
 
 });

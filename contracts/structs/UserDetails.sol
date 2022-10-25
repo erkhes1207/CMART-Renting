@@ -13,5 +13,5 @@ struct UserDetails {
     string governmentId;
     AddressDetail addr;
     EmergencyContactDetail emergencyContact;
-    int joinedAt;
+    string joinedAt;
 }

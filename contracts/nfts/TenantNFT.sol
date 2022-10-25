@@ -7,11 +7,15 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 
 import "../structs/UserDetails.sol";
+import "../structs/UserReviews.sol";
 
 contract TenantNFT is ERC721, AccessControl {
     using Counters for Counters.Counter;
 
     UserDetails[] public userDetails;
+
+    mapping(address => UserReviews[]) public reviewsFromHost;
+    mapping(address => UserReviews[]) public reviewsFromTenant;
  
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");

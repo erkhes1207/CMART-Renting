@@ -345,22 +345,22 @@
             "components": [
               {
                 "internalType": "string",
-                "name": "name",
+                "name": "emergencyName",
                 "type": "string"
               },
               {
                 "internalType": "string",
-                "name": "relationship",
+                "name": "emergencyRelationship",
                 "type": "string"
               },
               {
                 "internalType": "string",
-                "name": "email",
+                "name": "emergencyEmail",
                 "type": "string"
               },
               {
                 "internalType": "int256",
-                "name": "phoneNumber",
+                "name": "emergencyPhoneNumber",
                 "type": "int256"
               }
             ],
@@ -369,9 +369,9 @@
             "type": "tuple"
           },
           {
-            "internalType": "int256",
+            "internalType": "string",
             "name": "joinedAt",
-            "type": "int256"
+            "type": "string"
           }
         ],
         "internalType": "struct UserDetails",
@@ -543,22 +543,22 @@
             "components": [
               {
                 "internalType": "string",
-                "name": "name",
+                "name": "emergencyName",
                 "type": "string"
               },
               {
                 "internalType": "string",
-                "name": "relationship",
+                "name": "emergencyRelationship",
                 "type": "string"
               },
               {
                 "internalType": "string",
-                "name": "email",
+                "name": "emergencyEmail",
                 "type": "string"
               },
               {
                 "internalType": "int256",
-                "name": "phoneNumber",
+                "name": "emergencyPhoneNumber",
                 "type": "int256"
               }
             ],
@@ -567,9 +567,9 @@
             "type": "tuple"
           },
           {
-            "internalType": "int256",
+            "internalType": "string",
             "name": "joinedAt",
-            "type": "int256"
+            "type": "string"
           }
         ],
         "internalType": "struct UserDetails",
@@ -660,6 +660,64 @@
     "name": "renounceRole",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "reviewsFromHost",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "numericReview",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "review",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "reviewsFromTenant",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "numericReview",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "review",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -911,22 +969,22 @@
         "components": [
           {
             "internalType": "string",
-            "name": "name",
+            "name": "emergencyName",
             "type": "string"
           },
           {
             "internalType": "string",
-            "name": "relationship",
+            "name": "emergencyRelationship",
             "type": "string"
           },
           {
             "internalType": "string",
-            "name": "email",
+            "name": "emergencyEmail",
             "type": "string"
           },
           {
             "internalType": "int256",
-            "name": "phoneNumber",
+            "name": "emergencyPhoneNumber",
             "type": "int256"
           }
         ],
@@ -935,9 +993,9 @@
         "type": "tuple"
       },
       {
-        "internalType": "int256",
+        "internalType": "string",
         "name": "joinedAt",
-        "type": "int256"
+        "type": "string"
       }
     ],
     "stateMutability": "view",

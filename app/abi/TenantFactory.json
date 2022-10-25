@@ -231,22 +231,22 @@
             "components": [
               {
                 "internalType": "string",
-                "name": "name",
+                "name": "emergencyName",
                 "type": "string"
               },
               {
                 "internalType": "string",
-                "name": "relationship",
+                "name": "emergencyRelationship",
                 "type": "string"
               },
               {
                 "internalType": "string",
-                "name": "email",
+                "name": "emergencyEmail",
                 "type": "string"
               },
               {
                 "internalType": "int256",
-                "name": "phoneNumber",
+                "name": "emergencyPhoneNumber",
                 "type": "int256"
               }
             ],
@@ -255,9 +255,9 @@
             "type": "tuple"
           },
           {
-            "internalType": "int256",
+            "internalType": "string",
             "name": "joinedAt",
-            "type": "int256"
+            "type": "string"
           }
         ],
         "internalType": "struct UserDetails",
