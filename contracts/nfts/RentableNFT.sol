@@ -13,14 +13,14 @@ contract RentableNFT is ERC721, AccessControl, IRentableNFT {
 
     mapping (uint256  => TenantInfo) internal _tenants;
 
-    constructor(string memory name_, string memory symbol_) ERC721(name_, symbol_) {
-        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _grantRole(MINTER_ROLE, msg.sender);
+    constructor(address _realEstate) ERC721("RentableNFT", "RNT") {
+        _grantRole(DEFAULT_ADMIN_ROLE, _realEstate);
+        _grantRole(MINTER_ROLE, _realEstate);
         _tokenId = 1;
     }
 
     function setTenant(uint256 tokenId, address tenant, uint64 expires) public virtual{
-        require(_isApprovedOrOwner(msg.sender, tokenId), "ERC4907: transfer caller is not owner nor approved");
+        require(_isApprovedOrOwner(msg.sender, tokenId), "Transfer caller is not owner nor approved");
         TenantInfo storage info =  _tenants[tokenId];
         info.tenant = tenant;
         info.expires = expires;
@@ -57,6 +57,7 @@ contract RentableNFT is ERC721, AccessControl, IRentableNFT {
         require(balanceOf(to) == 0,"ALREADY HAS NFT");
         _safeMint(to, _tokenId);
         _tokenId += 1;
+        emit RentableNftMinted(_tokenId, to);
     }
 
     function totalSupply() view external returns(uint){

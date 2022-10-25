@@ -6,6 +6,8 @@ import "../structs/RealEstateNftDetails.sol";
 
 interface IRentableNFT {
 
+    event RentableNftMinted(uint256 indexed tokenId, address indexed host);
+
     // Logged when the tenant of an NFT is changed or expires is changed
     /// @notice Emitted when the `tenant` of an NFT or the `expires` of the `tenant` is changed
     /// The zero address for tenant indicates that there is no tenant address

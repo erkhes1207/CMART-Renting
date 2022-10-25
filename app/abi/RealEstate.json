@@ -266,33 +266,6 @@
         "internalType": "struct RealEstateDetails",
         "name": "_realEstateDetails",
         "type": "tuple"
-      },
-      {
-        "components": [
-          {
-            "internalType": "uint256",
-            "name": "price",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "deadline",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "limit",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "referrableLimit",
-            "type": "uint256"
-          }
-        ],
-        "internalType": "struct RealEstateNftDetails",
-        "name": "_realEstateNormalNftDetails",
-        "type": "tuple"
       }
     ],
     "stateMutability": "nonpayable",
@@ -326,19 +299,276 @@
   },
   {
     "inputs": [],
-    "name": "cancelRealEstate",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "getBalance",
     "outputs": [
       {
         "internalType": "uint256",
         "name": "",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getRealEsteateDetails",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum RealEstateType",
+            "name": "realEstateType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "int256",
+            "name": "roomCount",
+            "type": "int256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "country",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "street",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "aptSuite",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "city",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "state",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "zipCode",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct AddressDetail",
+            "name": "location",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "int256",
+                "name": "guests",
+                "type": "int256"
+              },
+              {
+                "internalType": "int256",
+                "name": "beds",
+                "type": "int256"
+              },
+              {
+                "internalType": "int256",
+                "name": "bedrooms",
+                "type": "int256"
+              },
+              {
+                "internalType": "int256",
+                "name": "bathrooms",
+                "type": "int256"
+              }
+            ],
+            "internalType": "struct GuestDetail",
+            "name": "guests",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "components": [
+                  {
+                    "internalType": "bool",
+                    "name": "hasPool",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasHotTub",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasPatio",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasGrill",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasFirePit",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasPoolTable",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasIndoorFireplace",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasOutdoorDiningAre",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasExerciseEquipment",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct StandoutMods",
+                "name": "standoutMods",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "bool",
+                    "name": "hasWifi",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasTelevision",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasKitchen",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasWasher",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasFreeParking",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasPaidParking",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasAirConditioning",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasDedicatedWorkspace",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasShower",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct GuestFavorites",
+                "name": "guestFavorites",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "bool",
+                    "name": "hasSmokeAlarm",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasFirstAidKit",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasCarbonMonoxideAlarm",
+                    "type": "bool"
+                  },
+                  {
+                    "internalType": "bool",
+                    "name": "hasFireExtinguisher",
+                    "type": "bool"
+                  }
+                ],
+                "internalType": "struct SafetyItems",
+                "name": "safetyItems",
+                "type": "tuple"
+              }
+            ],
+            "internalType": "struct AdditionalMods",
+            "name": "additionalMods",
+            "type": "tuple"
+          },
+          {
+            "internalType": "string[]",
+            "name": "photos",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "internalType": "int256",
+            "name": "price",
+            "type": "int256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "bool",
+                "name": "hasSecurityCamera",
+                "type": "bool"
+              },
+              {
+                "internalType": "bool",
+                "name": "hasDangerousAnimals",
+                "type": "bool"
+              }
+            ],
+            "internalType": "struct LegalItems",
+            "name": "legalItems",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct RealEstateDetails",
+        "name": "",
+        "type": "tuple"
       }
     ],
     "stateMutability": "view",
@@ -356,7 +586,7 @@
     "name": "nft",
     "outputs": [
       {
-        "internalType": "contract RealEstateNFT",
+        "internalType": "contract RentableNFT",
         "name": "",
         "type": "address"
       }
