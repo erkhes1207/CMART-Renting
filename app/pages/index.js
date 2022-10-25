@@ -18,7 +18,10 @@ export default function Home() {
   return (
     <div className='flex w-full justify-center items-center'>
       <div className='grid grid-cols-4 max-w-7xl w-full gap-6'>
-        <RealEstateCard id={"1"} />
+        {realEstate &&
+          realEstate.map((item, index) => (
+            <RealEstateCard data={item} id={index + 1} />
+          ))}
       </div>
     </div>
   );
