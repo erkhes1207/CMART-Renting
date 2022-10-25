@@ -7,14 +7,14 @@ import "../structs/RealEstateDetails.sol";
 import "../structs/UserDetails.sol";
 import "../structs/TenantInfo.sol";
 
-import "../nfts/RentableNFT.sol";
+import "../nfts/RealEstateNFT.sol";
 
 contract RealEstate {
     
     event RealEstateStatusChanged(RealEstateStatus indexed realEstateStatus);
     event NftMinted(address indexed user);
 
-    RentableNFT public nft;
+    RealEstateNFT public nft;
     uint256 public realEstateId;
     address public organizer;
     RealEstateDetails public realEstateDetails;
@@ -29,7 +29,7 @@ contract RealEstate {
         organizer = _organizer;
         realEstateDetails = _realEstateDetails;
 
-        nft = new RentableNFT(address(this));
+        nft = new RealEstateNFT(address(this));
     }
 
     function mint() external payable {
@@ -55,10 +55,6 @@ contract RealEstate {
     //     realEstateStatus = RealEstateStatus.Canceled;
     //     emit RealEstateStatusChanged(RealEstateStatus.Canceled);
     // }
-
-    function getRealEsteateDetails() external view returns(RealEstateDetails memory) {
-        return realEstateDetails;
-    }
 
     modifier onlyRealEstateOwner() {
         require(organizer == msg.sender, "NOT OWNER");

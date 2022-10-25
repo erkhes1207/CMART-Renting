@@ -244,23 +244,6 @@
             "internalType": "int256",
             "name": "price",
             "type": "int256"
-          },
-          {
-            "components": [
-              {
-                "internalType": "bool",
-                "name": "hasSecurityCamera",
-                "type": "bool"
-              },
-              {
-                "internalType": "bool",
-                "name": "hasDangerousAnimals",
-                "type": "bool"
-              }
-            ],
-            "internalType": "struct LegalItems",
-            "name": "legalItems",
-            "type": "tuple"
           }
         ],
         "internalType": "struct RealEstateDetails",
@@ -313,6 +296,121 @@
         "internalType": "uint256[]",
         "name": "",
         "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_realEstateId",
+        "type": "uint256"
+      }
+    ],
+    "name": "getRealEstateDetails",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum RealEstateType",
+            "name": "realEstateType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "int256",
+            "name": "roomCount",
+            "type": "int256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "string",
+                "name": "country",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "street",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "aptSuite",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "city",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "state",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "zipCode",
+                "type": "string"
+              }
+            ],
+            "internalType": "struct AddressDetail",
+            "name": "location",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "int256",
+                "name": "guests",
+                "type": "int256"
+              },
+              {
+                "internalType": "int256",
+                "name": "beds",
+                "type": "int256"
+              },
+              {
+                "internalType": "int256",
+                "name": "bedrooms",
+                "type": "int256"
+              },
+              {
+                "internalType": "int256",
+                "name": "bathrooms",
+                "type": "int256"
+              }
+            ],
+            "internalType": "struct GuestDetail",
+            "name": "guests",
+            "type": "tuple"
+          },
+          {
+            "internalType": "string[]",
+            "name": "photos",
+            "type": "string[]"
+          },
+          {
+            "internalType": "string",
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "internalType": "int256",
+            "name": "price",
+            "type": "int256"
+          }
+        ],
+        "internalType": "struct RealEstateDetails",
+        "name": "",
+        "type": "tuple"
       }
     ],
     "stateMutability": "view",
@@ -410,7 +508,7 @@
     "name": "hostNft",
     "outputs": [
       {
-        "internalType": "contract IHostNFT",
+        "internalType": "contract HostNFT",
         "name": "",
         "type": "address"
       }
@@ -567,23 +665,6 @@
         "internalType": "int256",
         "name": "price",
         "type": "int256"
-      },
-      {
-        "components": [
-          {
-            "internalType": "bool",
-            "name": "hasSecurityCamera",
-            "type": "bool"
-          },
-          {
-            "internalType": "bool",
-            "name": "hasDangerousAnimals",
-            "type": "bool"
-          }
-        ],
-        "internalType": "struct LegalItems",
-        "name": "legalItems",
-        "type": "tuple"
       }
     ],
     "stateMutability": "view",

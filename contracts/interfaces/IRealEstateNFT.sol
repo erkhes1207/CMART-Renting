@@ -2,9 +2,8 @@
 pragma solidity ^0.8.0;
 
 import "../structs/RealEstateDetails.sol";
-// import "../structs/RealEstateNftDetails.sol";
 
-interface IRentableNFT {
+interface IRealEstateNFT {
 
     event RentableNftMinted(uint256 indexed tokenId, address indexed host);
 

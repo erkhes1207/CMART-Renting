@@ -3,10 +3,10 @@ pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
-import "../interfaces/IRentableNFT.sol";
+import "../interfaces/IRealEstateNFT.sol";
 import "../structs/TenantInfo.sol";
 
-contract RentableNFT is ERC721, AccessControl, IRentableNFT {
+contract RealEstateNFT is ERC721, AccessControl, IRealEstateNFT {
 
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     uint public _tokenId;

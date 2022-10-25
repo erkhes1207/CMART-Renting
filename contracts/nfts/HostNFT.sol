@@ -6,17 +6,19 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 
+import "../interfaces/IHostNFT.sol";
+
 import "../structs/UserDetails.sol";
 import "../structs/UserReviews.sol";
 
-contract HostNFT is ERC721, AccessControl {
+contract HostNFT is ERC721, AccessControl, IHostNFT {
     using Counters for Counters.Counter;
 
     UserDetails[] public userDetails;
 
     mapping(address => UserReviews[]) public reviewsFromHost;
     mapping(address => UserReviews[]) public reviewsFromTenant;
- 
+
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
     bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
     Counters.Counter private _tokenIdCounter;
@@ -24,14 +26,15 @@ contract HostNFT is ERC721, AccessControl {
     constructor(address _hostFactory) ERC721("HostNFT", "HST") {
         _grantRole(DEFAULT_ADMIN_ROLE, _hostFactory);
         _grantRole(BURNER_ROLE, _hostFactory);
-        
+
         _grantRole(MINTER_ROLE, _hostFactory);
     }
 
-    function hostMint(
-        address to,
-        UserDetails calldata _userDetails
-    ) external onlyRole(MINTER_ROLE) returns (uint) {
+    function hostMint(address to, UserDetails calldata _userDetails)
+        external
+        override
+        returns (uint)
+    {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
@@ -40,25 +43,42 @@ contract HostNFT is ERC721, AccessControl {
         detail = _userDetails;
 
         userDetails.push(detail);
+        emit hostMinted(to, tokenId);
 
         return tokenId;
     }
 
-    function hostBurn (uint256 tokenId) external onlyRole(BURNER_ROLE) {
+    function hostBurn(uint256 tokenId) external override onlyRole(BURNER_ROLE) returns (uint) {
         _burn(tokenId);
+
+        emit hostBurned(tokenId);
+
+        return tokenId;
     }
 
-    function getHostDetail(uint id) external view returns(UserDetails memory){
+    function getHostDetail(uint id) external view override returns (UserDetails memory) {
         return userDetails[id];
     }
 
-    function reviewFromHost(address _host, UserReviews calldata _userReviews) external onlyRole(MINTER_ROLE) {
-        require(_userReviews.numericReview <= 5 && _userReviews.numericReview > 0, "Review must be between 1-5");
+    function reviewFromHost(address _host, UserReviews calldata _userReviews)
+        external
+        override
+    {
+        require(msg.sender == _host, "You can't review yourself");
+        require(
+            _userReviews.numericReview <= 5 && _userReviews.numericReview > 0,
+            "Review must be between 1-5"
+        );
         reviewsFromHost[_host].push(_userReviews);
     }
 
-    function reviewFromTenant(address _host, UserReviews calldata _userReviews) external onlyRole(MINTER_ROLE) {
-        require(_userReviews.numericReview <= 5 && _userReviews.numericReview > 0, "Review must be between 1-5");
+    function reviewFromTenant(address _host, UserReviews calldata _userReviews)
+        external override
+    {
+        require(
+            _userReviews.numericReview <= 5 && _userReviews.numericReview > 0,
+            "Review must be between 1-5"
+        );
         reviewsFromHost[_host].push(_userReviews);
     }
 
@@ -67,7 +87,7 @@ contract HostNFT is ERC721, AccessControl {
     function supportsInterface(bytes4 interfaceId)
         public
         view
-        override(ERC721, AccessControl)
+        override(AccessControl, ERC721, IERC165)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);

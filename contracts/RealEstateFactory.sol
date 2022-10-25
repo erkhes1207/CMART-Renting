@@ -18,7 +18,7 @@ contract RealEstateFactory is AccessControl {
   uint public realEstateId;
 
   HostFactory public hostFactory;
-  IHostNFT public hostNft;
+  HostNFT public hostNft;
 
   RealEstateDetails[] public realEstates;
 
@@ -30,7 +30,7 @@ contract RealEstateFactory is AccessControl {
 
   constructor(address _hostNft) {
     _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-    hostNft = IHostNFT(_hostNft);
+    hostNft = HostNFT(_hostNft);
 
     realEstateId = 1;
   }
@@ -70,6 +70,10 @@ contract RealEstateFactory is AccessControl {
 
   function getRealEstatesLength() external view returns(uint) {
     return realEstateIds.length;
+  }
+
+  function getRealEstateDetails(uint _realEstateId) external view returns(RealEstateDetails memory) {
+    return realEstates[_realEstateId];
   }
 
   modifier isHost(){

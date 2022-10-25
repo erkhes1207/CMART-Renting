@@ -3,7 +3,6 @@ pragma solidity ^0.8.4;
 
 import "./AddressDetail.sol";
 import "./RealEstateDetails/GuestDetail.sol";
-import "./RealEstateDetails/LegalItems.sol";
 import "../enums/RealEstateType.sol";
 
 struct RealEstateDetails {
@@ -15,5 +14,4 @@ struct RealEstateDetails {
     string title;
     string description;
     int price;
-    LegalItems legalItems;
 }
