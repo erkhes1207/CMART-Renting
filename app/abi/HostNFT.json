@@ -666,7 +666,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_tenant",
+        "name": "_host",
         "type": "address"
       },
       {
@@ -696,7 +696,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_tenant",
+        "name": "_host",
         "type": "address"
       },
       {
