@@ -88,9 +88,9 @@
             "type": "tuple"
           },
           {
-            "internalType": "string[]",
+            "internalType": "string",
             "name": "photos",
-            "type": "string[]"
+            "type": "string"
           },
           {
             "internalType": "string",
@@ -265,6 +265,11 @@
         "internalType": "struct GuestDetail",
         "name": "guests",
         "type": "tuple"
+      },
+      {
+        "internalType": "string",
+        "name": "photos",
+        "type": "string"
       },
       {
         "internalType": "string",
