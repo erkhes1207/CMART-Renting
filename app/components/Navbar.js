@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { connectMetamask } from "../slices/metamaskSlice";
 
 const Navbar = () => {
-  const router = useRouter();
   const dispatch = useDispatch();
   const metamask = useSelector((state) => state.metamask);
+  const app = useSelector((state) => state.app);
+
+  console.log("app: ", app);
 
   return (
     <div className='flex justify-center items-center w-full h-20 border border-b-gray-200'>
@@ -25,8 +27,9 @@ const Navbar = () => {
           />
         </Link>
         <div className='flex gap-5 items-center'>
-          <Link href='/register'>Register</Link>
           <Link href='/create-real-estate'>Host</Link>
+          <Link href='/host-profile'>My Profile</Link>
+          <Link href='/register'>Register</Link>
           <button
             className='flex gap-2 items-center px-5 py-2 border rounded-3xl hover:bg-slate-50 hover:text-[#f82f5d] text-gray-500 font-semibold'
             onClick={() => {
