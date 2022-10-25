@@ -4,18 +4,17 @@ pragma solidity ^0.8.4;
 import "../enums/RealEstateStatus.sol";
 
 import "../structs/RealEstateDetails.sol";
-import "../structs/RealEstateNftDetails.sol";
 import "../structs/UserDetails.sol";
 import "../structs/TenantInfo.sol";
 
-import "../nfts/RealEstateNFT.sol";
+import "../nfts/RentableNFT.sol";
 
 contract RealEstate {
     
     event RealEstateStatusChanged(RealEstateStatus indexed realEstateStatus);
     event NftMinted(address indexed user);
 
-    RealEstateNFT public nft;
+    RentableNFT public nft;
     uint256 public realEstateId;
     address public organizer;
     RealEstateDetails public realEstateDetails;
@@ -25,15 +24,13 @@ contract RealEstate {
     constructor(
         address _organizer,
         uint256 _realEstateId,
-        RealEstateDetails memory _realEstateDetails,
-        RealEstateNftDetails memory _realEstateNormalNftDetails
+        RealEstateDetails memory _realEstateDetails
     ) {
         realEstateId = _realEstateId;
         organizer = _organizer;
         realEstateDetails = _realEstateDetails;
-        realEstateNftDetails = _realEstateNormalNftDetails;
 
-        nft = new RealEstateNFT(address(this));
+        nft = new RentableNFT(address(this));
     }
 
     function mint() external payable {
@@ -55,9 +52,13 @@ contract RealEstate {
       return address(this).balance;
     }
 
-    function cancelRealEstate() public onlyRealEstateOwner {
-        realEstateStatus = RealEstateStatus.Canceled;
-        emit RealEstateStatusChanged(RealEstateStatus.Canceled);
+    // function cancelRealEstate() public onlyRealEstateOwner {
+    //     realEstateStatus = RealEstateStatus.Canceled;
+    //     emit RealEstateStatusChanged(RealEstateStatus.Canceled);
+    // }
+
+    function getRealEsteateDetails() external view returns(RealEstateDetails memory) {
+        return realEstateDetails;
     }
 
     modifier onlyRealEstateOwner() {

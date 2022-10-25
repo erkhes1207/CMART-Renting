@@ -34,16 +34,14 @@ contract RealEstateFactory is AccessControl {
   }
 
   function createRealEstate(
-    RealEstateDetails calldata _realEstateDetails,
-    RealEstateNftDetails calldata _realEstateNormalNftDetails
+    RealEstateDetails calldata _realEstateDetails
   ) isHost() external {
     require(hostNft.balanceOf(msg.sender) > 0,"USER ISN'T HOST");
 
     RealEstate _realEstate = new RealEstate(
       msg.sender,
       realEstateId,
-      _realEstateDetails,
-      _realEstateNormalNftDetails
+      _realEstateDetails
     );
 
     addressToHostRealEstateIds[msg.sender].push(realEstateId);
