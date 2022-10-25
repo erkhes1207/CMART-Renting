@@ -301,31 +301,34 @@ export default function HostForm() {
 
   async function createHost() {
     try {
-      // if (state.length === 0) {
-      //   dispatch(triggerInfoAlert({ content: "Enter your info" }));
-      //   return "";
-      // }
+      if (state.length === 0) {
+        dispatch(triggerInfoAlert({ content: "Enter your info" }));
+        return "";
+      }
       setDisableLoaderBtn(true);
       setLoading(true);
       let { hostWriteContract } = await getHostFactoryContract();
 
       let hostForm = [
-        state.firstName,
-        state.lastName,
+        [state.firstName, state.lastName],
         state.gender,
         state.email,
         parseInt(state.phoneNumber, 10),
         state.governmentId,
-        state.country,
-        state.street,
-        state.aptSuite,
-        state.city,
-        state.state,
-        state.zipCode,
-        state.emergencyName,
-        state.emergencyRelationship,
-        state.emergencyEmail,
-        parseInt(state.emergencyPhoneNumber, 10),
+        [
+          state.country,
+          state.street,
+          state.aptSuite,
+          state.city,
+          state.state,
+          state.zipCode,
+        ],
+        [
+          state.emergencyName,
+          state.emergencyRelationship,
+          state.emergencyEmail,
+          parseInt(state.emergencyPhoneNumber, 10),
+        ],
         Date.now().toString(),
       ];
 
