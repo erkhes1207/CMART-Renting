@@ -12,7 +12,7 @@ export default function Register() {
         </div>
         <div className="flex justify-center mt-5 text-2xl gap-5">
           <button
-            className=" px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	hover:text-[#f82f5d]"
+            className=" px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50 hover:text-[#f82f5d]"
             onClick={() => router.push("/host-form")}
           >
             Host
@@ -27,7 +27,6 @@ export default function Register() {
           </button>
         </div>
       </div>
-      ;
     </Layout>
   );
 }

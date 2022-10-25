@@ -14,17 +14,35 @@ export default function HostForm() {
               </span>
             </div>
             <div className="space-y-2">
-              <h3 className="uppercase text-sm font-semibold">full name</h3>
-              <input
-                type="text"
-                className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                placeholder="John Smith"
-              />
+              <div className="flex w-full justify-between gap-4">
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    First Name
+                  </span>
+                  <input
+                    type="text"
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="99310720"
+                  />
+                </div>
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    Last Name
+                  </span>
+                  <input
+                    type="text"
+                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="chingunee.dev@gmail.com"
+                  />
+                </div>
+              </div>
             </div>
             <div className="space-y-2">
               <div className="flex w-full justify-between gap-4">
                 <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">Phone</span>
+                  <span className="uppercase text-sm font-semibold">
+                    Phone Number
+                  </span>
                   <input
                     type="text"
                     className="w-full h-12 px-3 border rounded-md focus:outline-none"
@@ -73,14 +91,129 @@ export default function HostForm() {
                 </div>
               </div>
             </div>
-
-            <div className="space-y-2 w-full">
-              <h3 className="uppercase text-sm font-semibold">Bio</h3>
-              <textarea
-                className="border rounded-md pl-2 pt-2 w-full"
-                rows="10"
-                placeholder="Write a short and sweet description about yourself..."
-              ></textarea>
+            <div className="space-y-2">
+              <div className="flex w-full justify-between gap-4">
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    Country
+                  </span>
+                  <input
+                    type="text"
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="Mongolia"
+                  />
+                </div>
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    Street
+                  </span>
+                  <input
+                    type="text"
+                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="Сөүлийн гудамж"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex w-full justify-between gap-4">
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    Apt Suite
+                  </span>
+                  <input
+                    type="text"
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="apt suite"
+                  />
+                </div>
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">City</span>
+                  <input
+                    type="text"
+                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="Ulaanbaatar"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex w-full justify-between gap-4">
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">State</span>
+                  <input
+                    type="text"
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="state"
+                  />
+                </div>
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    Zip Code
+                  </span>
+                  <input
+                    type="text"
+                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="000121"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <h3 className="text-xl font-semibold">Emergency Contract</h3>
+            </div>
+            <div className="space-y-2">
+              <div className="flex w-full justify-between gap-4">
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    Full Name
+                  </span>
+                  <input
+                    type="text"
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="John Snow"
+                  />
+                </div>
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    Relationship
+                  </span>
+                  <input
+                    type="text"
+                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="Mother"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex w-full justify-between gap-4">
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">Email</span>
+                  <input
+                    type="text"
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="chingunee.dev@gmail.com"
+                  />
+                </div>
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    Phone Number
+                  </span>
+                  <input
+                    type="text"
+                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="99310720"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="space-y-2 w-1/2">
+              <h3 className="uppercase text-sm font-semibold">Joined at</h3>
+              <input
+                type="date"
+                className="w-full h-12 px-3 border rounded-md focus:outline-none"
+              />
             </div>
             <div className="flex justify-center">
               <button className="w-1/5 flex justify-center items-center border rounded cursor-pointer p-2 text-white bg-[#f82f5d]">
