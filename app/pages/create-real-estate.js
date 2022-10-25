@@ -2,20 +2,16 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { triggerSuccessAlert, triggerInfoAlert } from "../slices/alertSlice";
 import { getRealEstateFactoryContract } from "../contracts/RealEstateContractHelper";
-import { getContractEssentials } from "../contracts/helpers";
+import { getContractEssentials, parse } from "../contracts/helpers";
 
 export default function RealEstateForm() {
   const [state, setState] = useState([]);
   const [loading, setLoading] = useState(false);
   const [disableLoaderBtn, setDisableLoaderBtn] = useState(false);
   const dispatch = useDispatch();
-  let photos = [];
 
   function handleChange(e) {
-    setState({
-      ...state,
-      [e.target.name]: "photos" ? photos.push(e.target.value) : e.target.value,
-    });
+    setState({ ...state, [e.target.name]: e.target.value });
   }
 
   async function handleCreateRealEstate() {
@@ -27,42 +23,41 @@ export default function RealEstateForm() {
   }
 
   console.log("state: ", state);
-  console.log("photos: ", photos);
 
   return (
-    <div className="w-full p-5 lg:p-3">
-      <div className="mt-10">
-        <div className="font-body">
-          <div className="w-full p-6 mx-auto my-5 border rounded-2xl space-y-6 sm:w-4/5 lg:w-1/2">
-            <div className="space-y-2">
-              <h3 className="text-xl font-semibold">Host your real estate</h3>
-              <span className="text-gray-500">
+    <div className='w-full p-5 lg:p-3'>
+      <div className='mt-10'>
+        <div className='font-body'>
+          <div className='w-full p-6 mx-auto my-5 border rounded-2xl space-y-6 sm:w-4/5 lg:w-1/2'>
+            <div className='space-y-2'>
+              <h3 className='text-xl font-semibold'>Host your real estate</h3>
+              <span className='text-gray-500'>
                 Fill out a few details to start receiving payments directly to
                 your bank account
               </span>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex justify-between gap-4">
-                <span className="uppercase text-sm font-semibold w-full">
+            <div className='space-y-2'>
+              <div className='flex justify-between gap-4'>
+                <span className='uppercase text-sm font-semibold w-full'>
                   Title
                 </span>
-                <span className="uppercase text-sm font-semibold w-full">
+                <span className='uppercase text-sm font-semibold w-full'>
                   Description
                 </span>
               </div>
-              <div className="flex justify-between gap-4">
+              <div className='flex justify-between gap-4'>
                 <input
-                  type="text"
-                  name="title"
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  placeholder="Энхтайван хотхонд гражын хамт 3 өрөө байр"
+                  type='text'
+                  name='title'
+                  className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                  placeholder='Энхтайван хотхонд гражын хамт 3 өрөө байр'
                   onChange={handleChange}
                 />
                 <input
-                  type="text"
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  name="description"
+                  type='text'
+                  className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                  name='description'
                   placeholder="
                     Цэнгэлдэх хотхоны эсрэг талд буюу Энхтайваны гүүрний баруун урд талд байршилтай 'Хурд' группын барьсан 20 давхар байрны 17 давхарт 3 өрөө бүрэн тавилгатай саруул сэлүүхэн, үзэгдэх орчинмаш гоё байрыг гражийн хамт түрээслүүлнэ."
                   onChange={handleChange}
@@ -70,237 +65,221 @@ export default function RealEstateForm() {
               </div>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex justify-between gap-4">
-                <span className="uppercase text-sm font-semibold w-full">
+            <div className='flex items-center gap-4'>
+              <div className='w-1/2'>
+                <span className='uppercase text-sm font-semibold w-full'>
                   Type
                 </span>
-                <span className="uppercase text-sm font-semibold w-full">
-                  Location
-                </span>
-              </div>
-              <div className="flex justify-between gap-4">
                 <select
-                  name="type"
-                  defaultValue={"type-1"}
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                  name='type'
+                  defaultValue={"0"}
+                  className='w-full h-12 px-3 border rounded-md focus:outline-none'
                   onChange={handleChange}
                 >
-                  <option value="type-1">Apartment</option>
-                  <option value="type-2">House</option>
-                  <option value="type-3">Secondary Unit</option>
-                  <option value="type-4">Unique Space</option>
-                  <option value="type-5">Bed and Breakfast</option>
-                  <option value="type-6">Boutique Hotel</option>
+                  <option value='0'>Apartment</option>
+                  <option value='1'>House</option>
+                  <option value='2'>Secondary Unit</option>
+                  <option value='3'>Unique Space</option>
+                  <option value='4'>Bed and Breakfast</option>
+                  <option value='5'>Boutique Hotel</option>
                 </select>
+              </div>
+              <div className='w-1/2'>
+                <span className='uppercase text-sm font-semibold'>
+                  Room Count
+                </span>
                 <input
-                  type="text"
-                  className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                  name="location"
-                  placeholder="
-                    Central tower, 2 Sukhbaatar Square, Khoroo 8, Sukhbaatar District 14200 Ulaanbaatar, Mongolia"
+                  type='text'
+                  className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                  placeholder='Mongolia'
+                  name='roomCount'
                   onChange={handleChange}
                 />
               </div>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex w-full justify-between gap-4">
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">
+            <div className='space-y-2'>
+              <div className='flex w-full justify-between gap-4'>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold'>
                     Country
                   </span>
                   <input
-                    type="text"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="Mongolia"
-                    name="country"
+                    type='text'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='Mongolia'
+                    name='country'
                     onChange={handleChange}
                   />
                 </div>
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold'>
                     Street
                   </span>
                   <input
-                    type="text"
-                    name="street"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="Сөүлийн гудамж"
+                    type='text'
+                    name='street'
+                    className='w-full  h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='Сөүлийн гудамж'
                     onChange={handleChange}
                   />
                 </div>
               </div>
             </div>
-            <div className="space-y-2">
-              <div className="flex w-full justify-between gap-4">
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">
+            <div className='space-y-2'>
+              <div className='flex w-full justify-between gap-4'>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold'>
                     Apt Suite
                   </span>
                   <input
-                    type="text"
-                    name="aptSuite"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="apt suite"
+                    type='text'
+                    name='aptSuite'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='apt suite'
                     onChange={handleChange}
                   />
                 </div>
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">City</span>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold'>City</span>
                   <input
-                    type="text"
-                    name="city"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="Ulaanbaatar"
+                    type='text'
+                    name='city'
+                    className='w-full  h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='Ulaanbaatar'
                     onChange={handleChange}
                   />
                 </div>
               </div>
             </div>
-            <div className="space-y-2">
-              <div className="flex w-full justify-between gap-4">
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">State</span>
+            <div className='space-y-2'>
+              <div className='flex w-full justify-between gap-4'>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold'>State</span>
                   <input
-                    type="text"
-                    name="state"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="state"
+                    type='text'
+                    name='state'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='state'
                     onChange={handleChange}
                   />
                 </div>
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold'>
                     Zip Code
                   </span>
                   <input
-                    type="text"
-                    name="zipCode"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="000121"
+                    type='text'
+                    name='zipCode'
+                    className='w-full  h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='000121'
                     onChange={handleChange}
                   />
                 </div>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex justify-between gap-4">
-                <label
-                  htmlFor="room"
-                  className="uppercase text-sm font-semibold w-full"
-                >
-                  Room
-                </label>
-                <label
-                  htmlFor="people"
-                  className="uppercase text-sm font-semibold w-full"
-                >
-                  People
-                </label>
-              </div>
-
-              <div className="flex justify-between gap-4">
-                <select
-                  name="room"
-                  defaultValue={"room-1"}
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  onChange={handleChange}
-                >
-                  <option value="room-1">1</option>
-                  <option value="room-2">2</option>
-                  <option value="room-3">3</option>
-                  <option value="room-4">4</option>
-                  <option value="room-5">5</option>
-                </select>
-                <select
-                  name="people"
-                  defaultValue={"people-1"}
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  onChange={handleChange}
-                >
-                  <option value="people-1">1</option>
-                  <option value="people-2">2</option>
-                  <option value="people-3">3</option>
-                  <option value="people-4">4</option>
-                  <option value="people-5">5</option>
-                </select>
+            <div className='space-y-2'>
+              <div className='flex justify-between gap-4'>
+                <div className='w-1/2'>
+                  <label
+                    htmlFor='people'
+                    className='uppercase text-sm font-semibold w-full'
+                  >
+                    Guests
+                  </label>
+                  <select
+                    name='guests'
+                    defaultValue={"1"}
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    onChange={handleChange}
+                  >
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
+                  </select>
+                </div>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold w-full'>
+                    Photos
+                  </span>
+                  <div className='flex justify-between gap-4'>
+                    <input
+                      type='text'
+                      name='photos'
+                      onChange={handleChange}
+                      className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                      placeholder='url'
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex justify-between gap-4">
-                <span className="uppercase text-sm font-semibold w-full">
-                  Beds
-                </span>
-                <span className="uppercase text-sm font-semibold w-full">
-                  Bed rooms
-                </span>
-              </div>
-              <div className="flex justify-between gap-4">
-                <input
-                  type="text"
-                  name="beds"
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  placeholder="2 beds"
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  name="bedrooms"
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  placeholder="
-                    2 bathrooms"
-                  onChange={handleChange}
-                />
+            <div className='space-y-2'>
+              <div className='flex justify-between gap-4'>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold w-full'>
+                    Beds
+                  </span>
+                  <input
+                    type='text'
+                    name='beds'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='2 beds'
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold w-full'>
+                    Bed Rooms
+                  </span>
+                  <input
+                    type='text'
+                    name='bedrooms'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='
+                    2 bathrooms'
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex justify-between gap-4">
-                <span className="uppercase text-sm font-semibold w-full">
-                  Bath rooms
-                </span>
-                <span className="uppercase text-sm font-semibold w-full">
-                  Price
-                </span>
-              </div>
-              <div className="flex justify-between gap-4">
-                <input
-                  type="text"
-                  name="bathrooms"
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  placeholder="100 ETH"
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  name="price"
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  placeholder="100 ETH"
-                  onChange={handleChange}
-                />
+            <div className='space-y-2'>
+              <div className='flex justify-between gap-4'>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold w-full'>
+                    Bath rooms
+                  </span>
+                  <input
+                    type='text'
+                    name='bathrooms'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='2 bathrooms'
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold w-full'>
+                    Price
+                  </span>
+                  <input
+                    type='text'
+                    name='price'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='100 ETH'
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
             </div>
-            <div className="space-y-2">
-              <span className="uppercase text-sm font-semibold w-full">
-                Photos
-              </span>
 
-              <div className="flex justify-between gap-4">
-                <input
-                  type="text"
-                  name="photos"
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  placeholder="
-                    url"
-                />
-              </div>
-            </div>
-            <div className="flex justify-center">
+            <div className='flex justify-center'>
               <button
-                className="w-1/5 flex justify-center items-center border rounded cursor-pointer p-2 text-white bg-[#f82f5d]"
+                className='w-1/5 flex justify-center items-center border rounded cursor-pointer p-2 text-white bg-[#f82f5d]'
                 onClick={() => handleCreateRealEstate()}
                 disabled={disableLoaderBtn ? true : false}
               >
@@ -311,17 +290,17 @@ export default function RealEstateForm() {
                         ? "fill-black"
                         : "text-blue-400 fill-white"
                     }  animate-spin `}
-                    viewBox="0 0 100 101"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox='0 0 100 101'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
                   >
                     <path
-                      d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                      fill="currentColor"
+                      d='M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z'
+                      fill='currentColor'
                     />
                     <path
-                      d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                      fill="currentFill"
+                      d='M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z'
+                      fill='currentFill'
                     />
                   </svg>
                 ) : (
@@ -346,18 +325,22 @@ export default function RealEstateForm() {
       let { realEstateWriteContract } = await getRealEstateFactoryContract();
 
       let realEstateForm = [
-        state.type,
-        state.room,
-        state.country,
-        state.street,
-        state.aptSuite,
-        state.city,
-        state.state,
-        state.zipCode,
-        state.people,
-        state.beds,
-        state.bedrooms,
-        state.bathrooms,
+        parseInt(state.type, 10),
+        parseInt(state.roomCount, 10),
+        [
+          state.country,
+          state.street,
+          state.aptSuite,
+          state.city,
+          state.state,
+          state.zipCode,
+        ],
+        [
+          parseInt(state.guests, 10),
+          parseInt(state.beds, 10),
+          parseInt(state.bedrooms, 10),
+          parseInt(state.bathrooms, 10),
+        ],
         state.photos,
         state.title,
         state.description,

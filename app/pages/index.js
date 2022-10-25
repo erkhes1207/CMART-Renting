@@ -24,7 +24,7 @@ export default function Home() {
 
   async function getAllRealEstates() {
     const { realEstateReadContract } = await getRealEstateFactoryContract();
-    let allRealEstateIds = await realEstateReadContract.getAllRealEstates();
+    let allRealEstateIds = await realEstateReadContract.getAllRealEstateIds();
     let realEstateDataArray = [];
 
     setLoading(true);
