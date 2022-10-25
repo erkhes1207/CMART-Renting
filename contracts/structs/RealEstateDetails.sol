@@ -10,7 +10,7 @@ struct RealEstateDetails {
     int roomCount;
     AddressDetail location;
     GuestDetail guests;
-    string[] photos;
+    string photos;
     string title;
     string description;
     int price;
