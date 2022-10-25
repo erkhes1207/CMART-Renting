@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import { store } from "../store";
 import CheckMetamask from "../checks/CheckMetamask";
 import CheckNetwork from "../checks/CheckNetwork";
+import CheckUser from "../checks/CheckUser";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
@@ -10,9 +11,11 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
       <CheckMetamask>
         <CheckNetwork>
-          <Layout>
-            <Component {...pageProps} />;
-          </Layout>
+          <CheckUser>
+            <Layout>
+              <Component {...pageProps} />;
+            </Layout>
+          </CheckUser>
         </CheckNetwork>
       </CheckMetamask>
     </Provider>

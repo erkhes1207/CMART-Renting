@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import Layout from "../components/Layout";
 import RealEstateCard from "../components/RealEstateCard";
+import { getRealEstateFactoryContract } from "../contracts/RealEstateContractHelper";
 
 export default function Home() {
+  const [realEstate, setRealEstates] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    getAllRealEstates();
+  }, []);
+
+  console.log("realEstate: ", realEstate);
+
   return (
     <div className='flex w-full justify-center items-center'>
       <div className='grid grid-cols-4 max-w-7xl w-full gap-6'>
@@ -10,4 +21,44 @@ export default function Home() {
       </div>
     </div>
   );
+
+  async function getAllRealEstates() {
+    const { realEstateReadContract } = await getRealEstateFactoryContract();
+    let allRealEstateIds = await realEstateReadContract.getAllRealEstates();
+    let realEstateDataArray = [];
+
+    setLoading(true);
+
+    for (let id of allRealEstateIds) {
+      let realEstateAddress = null;
+
+      try {
+        realEstateAddress = await realEstateReadContract.realEstateIdToAddress(
+          id.toNumber()
+        );
+      } catch (e) {
+        console.log(e);
+      }
+
+      if (realEstateAddress != null) {
+        const { realEstateReadContract } = await getRealEstateFactoryContract(
+          realEstateAddress
+        );
+        let realEstateDetails =
+          await realEstateReadContract._realEstateDetails();
+        // let eventStatus = await realEstateReadContract.eventStatus();
+
+        let realEstateData = {
+          id: id.toNumber(),
+          realEstateAddress,
+          realEstateDetails,
+        };
+
+        realEstateDataArray.push(realEstateData);
+      }
+    }
+    // console.log(realEstateDataArray);
+    setRealEstates(realEstateDataArray);
+    setLoading(false);
+  }
 }

@@ -13,6 +13,7 @@ import {
 
 import { metamaskReducer } from "./slices/metamaskSlice";
 import { alertReducer } from "./slices/alertSlice";
+import { appReducer } from "./slices/appSlice";
 
 const persistConfig = {
   key: "root",
@@ -24,6 +25,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   metamask: metamaskReducer,
   alert: alertReducer,
+  app: appReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
