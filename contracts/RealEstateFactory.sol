@@ -68,6 +68,10 @@ contract RealEstateFactory is AccessControl {
     return realEstateIds;
   }
 
+  function getRealEstateDetails(uint _realEstateId) external view returns(RealEstateDetails memory) {
+    return realEstates[_realEstateId];
+  }
+
   function getRealEstatesLength() external view returns(uint) {
     return realEstateIds.length;
   }

@@ -14,7 +14,7 @@ import "../structs/UserReviews.sol";
 contract TenantNFT is ERC721, AccessControl, ITenantNFT {
     using Counters for Counters.Counter;
 
-    UserDetails[] public userDetails;
+    UserDetails public userDetails;
 
     mapping(address => UserReviews[]) public reviewsFromHost;
     mapping(address => UserReviews[]) public reviewsFromTenant;
@@ -41,7 +41,6 @@ contract TenantNFT is ERC721, AccessControl, ITenantNFT {
         UserDetails memory detail;
         detail = _userDetails;
 
-        userDetails.push(detail);
         emit tenantMinted(to, tokenId);
 
         return tokenId;
@@ -53,10 +52,6 @@ contract TenantNFT is ERC721, AccessControl, ITenantNFT {
         emit tenantBurned(tokenId);
 
         return tokenId;
-    }
-
-    function getTenantDetail(uint id) external override view returns(UserDetails memory){
-        return userDetails[id];
     }
 
     function reviewFromHost(address _tenant, UserReviews calldata _userReviews) external override {
@@ -72,6 +67,20 @@ contract TenantNFT is ERC721, AccessControl, ITenantNFT {
 
         emit tenantGotReviewed(_tenant, _userReviews);
     }
+    
+    function getOwnDetail() external view override onlyOwner returns (UserDetails memory) {
+        return userDetails;
+    }
+
+    function getTenantDetail() external view override returns (string memory, string memory, uint, string memory) {
+        return (userDetails.name.firstName, userDetails.email, userDetails.phoneNumber, userDetails.joinedAt);
+    }
+    
+    modifier onlyOwner() {
+        require(balanceOf(msg.sender) != 0, "Not owner of this NFT");
+        _;
+    }
+
     // The following functions are overrides required by Solidity.
 
     function supportsInterface(bytes4 interfaceId)

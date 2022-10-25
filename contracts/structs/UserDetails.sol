@@ -9,7 +9,7 @@ struct UserDetails {
     NameDetail name;
     string gender;
     string email;
-    int phoneNumber;
+    uint phoneNumber;
     string governmentId;
     AddressDetail addr;
     EmergencyContactDetail emergencyContact;

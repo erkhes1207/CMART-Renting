@@ -319,14 +319,36 @@
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "getHostDetail",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
       {
         "internalType": "uint256",
-        "name": "id",
+        "name": "",
         "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
       }
     ],
-    "name": "getHostDetail",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getOwnDetail",
     "outputs": [
       {
         "components": [
@@ -358,9 +380,9 @@
             "type": "string"
           },
           {
-            "internalType": "int256",
+            "internalType": "uint256",
             "name": "phoneNumber",
-            "type": "int256"
+            "type": "uint256"
           },
           {
             "internalType": "string",
@@ -562,9 +584,9 @@
             "type": "string"
           },
           {
-            "internalType": "int256",
+            "internalType": "uint256",
             "name": "phoneNumber",
-            "type": "int256"
+            "type": "uint256"
           },
           {
             "internalType": "string",
@@ -1011,13 +1033,7 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "userDetails",
     "outputs": [
       {
@@ -1048,9 +1064,9 @@
         "type": "string"
       },
       {
-        "internalType": "int256",
+        "internalType": "uint256",
         "name": "phoneNumber",
-        "type": "int256"
+        "type": "uint256"
       },
       {
         "internalType": "string",

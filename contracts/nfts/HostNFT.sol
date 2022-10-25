@@ -14,7 +14,7 @@ import "../structs/UserReviews.sol";
 contract HostNFT is ERC721, AccessControl, IHostNFT {
     using Counters for Counters.Counter;
 
-    UserDetails[] public userDetails;
+    UserDetails public userDetails;
 
     mapping(address => UserReviews[]) public reviewsFromHost;
     mapping(address => UserReviews[]) public reviewsFromTenant;
@@ -43,7 +43,6 @@ contract HostNFT is ERC721, AccessControl, IHostNFT {
         UserDetails memory detail;
         detail = _userDetails;
 
-        userDetails.push(detail);
         emit hostMinted(to, tokenId);
 
         return tokenId;
@@ -55,10 +54,6 @@ contract HostNFT is ERC721, AccessControl, IHostNFT {
         emit hostBurned(tokenId);
 
         return tokenId;
-    }
-
-    function getHostDetail(uint id) external view override returns (UserDetails memory) {
-        return userDetails[id];
     }
 
     function reviewFromHost(address _host, UserReviews calldata _userReviews)
@@ -85,6 +80,19 @@ contract HostNFT is ERC721, AccessControl, IHostNFT {
         reviewsFromHost[_host].push(_userReviews);
 
         emit hostGotReviewed(_host, _userReviews);
+    }
+    
+    function getOwnDetail() external view override onlyOwner returns (UserDetails memory) {
+        return userDetails;
+    }
+
+    function getHostDetail() external view override returns (string memory, string memory, uint, string memory) {
+        return (userDetails.name.firstName, userDetails.email, userDetails.phoneNumber, userDetails.joinedAt);
+    }
+
+    modifier onlyOwner() {
+        require(balanceOf(msg.sender) != 0, "Not owner of this NFT");
+        _;
     }
 
     // The following functions are overrides required by Solidity.

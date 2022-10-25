@@ -18,8 +18,10 @@ interface IHostNFT is IERC165 {
 
     function hostBurn(uint tokenId) external returns (uint);
     
-    function getHostDetail(uint id) external view returns (UserDetails memory);
+    function getOwnDetail() external view returns (UserDetails memory);
     
+    function getHostDetail() external view returns (string memory, string memory, uint, string memory);
+
     function reviewFromHost(address _host, UserReviews calldata _userReviews) external;
 
     function reviewFromTenant(address _host, UserReviews calldata _userReviews) external;

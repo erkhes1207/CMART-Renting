@@ -18,7 +18,9 @@ interface ITenantNFT is IERC165 {
 
     function tenantBurn(uint tokenId) external returns (uint);
     
-    function getTenantDetail(uint id) external view returns (UserDetails memory);
+    function getOwnDetail() external view returns (UserDetails memory);
+    
+    function getTenantDetail() external view returns (string memory, string memory, uint, string memory);
     
     function reviewFromHost(address _tenant, UserReviews calldata _userReviews) external;
 

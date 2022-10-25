@@ -181,9 +181,9 @@
             "type": "string"
           },
           {
-            "internalType": "int256",
+            "internalType": "uint256",
             "name": "phoneNumber",
-            "type": "int256"
+            "type": "uint256"
           },
           {
             "internalType": "string",

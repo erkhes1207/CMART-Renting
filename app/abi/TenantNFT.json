@@ -319,33 +319,8 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "role",
-        "type": "bytes32"
-      }
-    ],
-    "name": "getRoleAdmin",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "id",
-        "type": "uint256"
-      }
-    ],
-    "name": "getTenantDetail",
+    "inputs": [],
+    "name": "getOwnDetail",
     "outputs": [
       {
         "components": [
@@ -377,9 +352,9 @@
             "type": "string"
           },
           {
-            "internalType": "int256",
+            "internalType": "uint256",
             "name": "phoneNumber",
-            "type": "int256"
+            "type": "uint256"
           },
           {
             "internalType": "string",
@@ -459,6 +434,53 @@
         "internalType": "struct UserDetails",
         "name": "",
         "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getRoleAdmin",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getTenantDetail",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
       }
     ],
     "stateMutability": "view",
@@ -873,9 +895,9 @@
             "type": "string"
           },
           {
-            "internalType": "int256",
+            "internalType": "uint256",
             "name": "phoneNumber",
-            "type": "int256"
+            "type": "uint256"
           },
           {
             "internalType": "string",
@@ -1011,13 +1033,7 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
+    "inputs": [],
     "name": "userDetails",
     "outputs": [
       {
@@ -1048,9 +1064,9 @@
         "type": "string"
       },
       {
-        "internalType": "int256",
+        "internalType": "uint256",
         "name": "phoneNumber",
-        "type": "int256"
+        "type": "uint256"
       },
       {
         "internalType": "string",
