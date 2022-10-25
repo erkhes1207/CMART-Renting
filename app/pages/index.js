@@ -49,7 +49,7 @@ export default function Home() {
           realEstateAddress
         );
         let realEstateDetails =
-          await realEstateReadContract._realEstateDetails();
+          await realEstateReadContract.getRealEstateDetails();
         // let eventStatus = await realEstateReadContract.eventStatus();
 
         let realEstateData = {

@@ -322,7 +322,8 @@ export default function RealEstateForm() {
       }
       setDisableLoaderBtn(true);
       setLoading(true);
-      let { realEstateWriteContract } = await getRealEstateFactoryContract();
+      let { realEstateFactoryWriteContract } =
+        await getRealEstateFactoryContract();
 
       let realEstateForm = [
         parseInt(state.type, 10),
@@ -350,7 +351,7 @@ export default function RealEstateForm() {
       console.log("realEstateForm: ", realEstateForm);
 
       if (realEstateForm !== undefined) {
-        const tx = await realEstateWriteContract.createRealEstate(
+        const tx = await realEstateFactoryWriteContract.createRealEstate(
           realEstateForm
         );
         await tx.wait();
