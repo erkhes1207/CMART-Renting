@@ -3,7 +3,6 @@ pragma solidity ^0.8.4;
 
 import "./AddressDetail.sol";
 import "./RealEstateDetails/GuestDetail.sol";
-import "./RealEstateDetails/AdditionalMods.sol";
 import "./RealEstateDetails/LegalItems.sol";
 import "../enums/RealEstateType.sol";
 
@@ -12,7 +11,6 @@ struct RealEstateDetails {
     int roomCount;
     AddressDetail location;
     GuestDetail guests;
-    AdditionalMods additionalMods;
     string[] photos;
     string title;
     string description;

@@ -14,11 +14,13 @@ contract RealEstateFactory is AccessControl {
   mapping(address => uint[]) public addressToHostRealEstateIds;
   mapping(uint => address) public realEstateIdToAddress;
 
-  uint[] public realEstates;
+  uint[] public realEstateIds;
   uint public realEstateId;
 
   HostFactory public hostFactory;
   IHostNFT public hostNft;
+
+  RealEstateDetails[] public realEstates;
 
   event RealEstateCreated (
     uint indexed realEstateId,
@@ -47,7 +49,9 @@ contract RealEstateFactory is AccessControl {
     addressToHostRealEstateIds[msg.sender].push(realEstateId);
     realEstateIdToAddress[realEstateId] = address(_realEstate);
 
-    realEstates.push(realEstateId);
+    realEstates.push(_realEstateDetails);
+
+    realEstateIds.push(realEstateId);
     emit RealEstateCreated(realEstateId, msg.sender, false);
     realEstateId += 1;
   }
@@ -61,11 +65,11 @@ contract RealEstateFactory is AccessControl {
   }
 
   function getAllRealEstates() external view returns(uint[] memory) {
-    return realEstates;
+    return realEstateIds;
   }
 
   function getRealEstatesLength() external view returns(uint) {
-    return realEstates.length;
+    return realEstateIds.length;
   }
 
   modifier isHost(){

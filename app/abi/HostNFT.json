@@ -666,6 +666,66 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "_tenant",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "numericReview",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "review",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct UserReviews",
+        "name": "_userReviews",
+        "type": "tuple"
+      }
+    ],
+    "name": "reviewFromHost",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tenant",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "numericReview",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "review",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct UserReviews",
+        "name": "_userReviews",
+        "type": "tuple"
+      }
+    ],
+    "name": "reviewFromTenant",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "",
         "type": "address"
       },

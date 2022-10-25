@@ -52,6 +52,15 @@ contract TenantNFT is ERC721, AccessControl {
         return userDetails[id];
     }
 
+    function reviewFromHost(address _tenant, UserReviews calldata _userReviews) external onlyRole(MINTER_ROLE) {
+        require(_userReviews.numericReview <= 5 && _userReviews.numericReview > 0, "Review must be between 1-5");
+        reviewsFromHost[_tenant].push(_userReviews);
+    }
+
+    function reviewFromTenant(address _tenant, UserReviews calldata _userReviews) external onlyRole(MINTER_ROLE) {
+        require(_userReviews.numericReview <= 5 && _userReviews.numericReview > 0, "Review must be between 1-5");
+        reviewsFromHost[_tenant].push(_userReviews);
+    }
     // The following functions are overrides required by Solidity.
 
     function supportsInterface(bytes4 interfaceId)
