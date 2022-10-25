@@ -18,7 +18,7 @@ const metamaskSlice = createSlice({
     checkConnected: (state) => {
       if (typeof window.ethereum !== "undefined") {
         if (window.ethereum.selectedAddress != undefined) {
-          state.isConnec ted = true;
+          state.isConnected = true;
           state.selectedAccount = window.ethereum.selectedAddress;
           state.accounts = [window.ethereum.selectedAddress];
         }

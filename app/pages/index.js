@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import Layout from "../components/Layout";
 import RealEstateCard from "../components/RealEstateCard";
-import { getRealEstateFactoryContract } from "../contracts/RealEstateContractHelper";
+import { getRealEstateContract } from "../contracts/RealEstateContractHelper";
+import { getRealEstateFactoryContract } from "../contracts/RealEstateContractFactoryHelper";
 
 export default function Home() {
   const [realEstate, setRealEstates] = useState([]);
@@ -23,8 +24,10 @@ export default function Home() {
   );
 
   async function getAllRealEstates() {
-    const { realEstateReadContract } = await getRealEstateFactoryContract();
-    let allRealEstateIds = await realEstateReadContract.getAllRealEstateIds();
+    const { realEstateFactoryReadContract } =
+      await getRealEstateFactoryContract();
+    let allRealEstateIds =
+      await realEstateFactoryReadContract.getAllRealEstateIds();
     let realEstateDataArray = [];
 
     setLoading(true);
@@ -33,15 +36,16 @@ export default function Home() {
       let realEstateAddress = null;
 
       try {
-        realEstateAddress = await realEstateReadContract.realEstateIdToAddress(
-          id.toNumber()
-        );
+        realEstateAddress =
+          await realEstateFactoryReadContract.realEstateIdToAddress(
+            id.toNumber()
+          );
       } catch (e) {
         console.log(e);
       }
 
       if (realEstateAddress != null) {
-        const { realEstateReadContract } = await getRealEstateFactoryContract(
+        const { realEstateReadContract } = await getRealEstateContract(
           realEstateAddress
         );
         let realEstateDetails =

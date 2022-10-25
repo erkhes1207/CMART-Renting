@@ -1,20 +1,19 @@
 import { ethers } from "ethers";
 import { getContractEssentials } from "./helpers";
-import { realEstateFactory } from "../genAddresses.json";
-import realEstateFactoryAbi from "../abi/RealEstateFactory.json";
+import realEstateAbi from "../abi/RealEstate.json";
 
-async function getRealEstateFactoryContract() {
+async function getRealEstateContract(address) {
   let { provider, signer } = await getContractEssentials();
 
   const realEstateReadContract = new ethers.Contract(
-    realEstateFactory,
-    realEstateFactoryAbi,
+    address,
+    realEstateAbi,
     provider
   );
 
   let realEstateWriteContract = realEstateReadContract.connect(signer);
 
-  return { realEstateReadContract, realEstateWriteContract, provider, signer };
+  return { realEstateReadContract, realEstateWriteContract };
 }
 
-export { getRealEstateFactoryContract };
+export { getRealEstateContract };

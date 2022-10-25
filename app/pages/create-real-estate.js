@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { triggerSuccessAlert, triggerInfoAlert } from "../slices/alertSlice";
-import { getRealEstateFactoryContract } from "../contracts/RealEstateContractHelper";
+import { getRealEstateFactoryContract } from "../contracts/RealEstateContractFactoryHelper";
 import { getContractEssentials, parse } from "../contracts/helpers";
 
 export default function RealEstateForm() {
