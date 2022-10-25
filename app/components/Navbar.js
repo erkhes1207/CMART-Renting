@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex gap-2">
           <button
             className="flex items-center px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	 hover:text-[#f82f5d] "
-            onClick={() => router.push("/host-form")}
+            onClick={() => router.push("/register")}
           >
             Register
           </button>

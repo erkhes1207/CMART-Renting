@@ -87,7 +87,7 @@ export default function HostForm() {
               </div>
               <div className="flex justify-center">
                 <button className="w-1/5 flex justify-center items-center border rounded cursor-pointer p-2 text-white bg-[#f82f5d]">
-                  <span>Mint Host NFT</span>
+                  <span>Mint NFT</span>
                 </button>
               </div>
             </div>
