@@ -101,14 +101,19 @@
             "type": "tuple"
           },
           {
-            "internalType": "int256",
-            "name": "roomCount",
-            "type": "int256"
+            "internalType": "uint256",
+            "name": "guests",
+            "type": "uint256"
           },
           {
-            "internalType": "int256",
+            "internalType": "uint256",
+            "name": "roomCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
             "name": "mkv",
-            "type": "int256"
+            "type": "uint256"
           },
           {
             "internalType": "string",
@@ -126,14 +131,14 @@
             "type": "string"
           },
           {
-            "internalType": "int256",
+            "internalType": "uint256",
             "name": "price",
-            "type": "int256"
+            "type": "uint256"
           },
           {
-            "internalType": "int256",
+            "internalType": "string",
             "name": "payment",
-            "type": "int256"
+            "type": "string"
           }
         ],
         "internalType": "struct RealEstateDetails",
@@ -241,14 +246,19 @@
             "type": "tuple"
           },
           {
-            "internalType": "int256",
-            "name": "roomCount",
-            "type": "int256"
+            "internalType": "uint256",
+            "name": "guests",
+            "type": "uint256"
           },
           {
-            "internalType": "int256",
+            "internalType": "uint256",
+            "name": "roomCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
             "name": "mkv",
-            "type": "int256"
+            "type": "uint256"
           },
           {
             "internalType": "string",
@@ -266,14 +276,14 @@
             "type": "string"
           },
           {
-            "internalType": "int256",
+            "internalType": "uint256",
             "name": "price",
-            "type": "int256"
+            "type": "uint256"
           },
           {
-            "internalType": "int256",
+            "internalType": "string",
             "name": "payment",
-            "type": "int256"
+            "type": "string"
           }
         ],
         "internalType": "struct RealEstateDetails",

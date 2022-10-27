@@ -5,11 +5,12 @@ import "./AddressDetail.sol";
 
 struct RealEstateDetails {
     AddressDetail location;
-    int roomCount;
-    int mkv;
+    uint guests;
+    uint roomCount;
+    uint mkv;
     string photo;
     string title;
     string description;
-    int price;
-    int payment;
+    uint price;
+    string payment;
 }
