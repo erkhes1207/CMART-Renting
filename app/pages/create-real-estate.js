@@ -30,11 +30,7 @@ export default function RealEstateForm() {
         <div className="font-body">
           <div className="w-full p-6 mx-auto my-5 border rounded-2xl space-y-6 sm:w-4/5 lg:w-1/2">
             <div className="space-y-2">
-              <h3 className="text-xl font-semibold">Host your real estate</h3>
-              <span className="text-gray-500">
-                Fill out a few details to start receiving payments directly to
-                your bank account
-              </span>
+              <h3 className="text-xl font-semibold">Зар оруулах хүсэлт</h3>
             </div>
 
             <div className="space-y-2">
@@ -45,7 +41,7 @@ export default function RealEstateForm() {
                     type="text"
                     className="w-full h-12 px-3 border rounded-md focus:outline-none"
                     placeholder="Улаанбаатар"
-                    name="city"
+                    name="khot"
                     onChange={handleChange}
                   />
                 </div>
@@ -55,7 +51,7 @@ export default function RealEstateForm() {
                   </span>
                   <input
                     type="text"
-                    name="district"
+                    name="duureg"
                     className="w-full  h-12 px-3 border rounded-md focus:outline-none"
                     placeholder="Баянзүрх"
                     onChange={handleChange}
@@ -114,13 +110,23 @@ export default function RealEstateForm() {
             <div className="flex items-center gap-4">
               <div className="w-1/2">
                 <span className="uppercase text-sm font-semibold">
-                  Room Count
+                  Өрөөний тоо
                 </span>
                 <input
                   type="text"
                   className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  placeholder="Mongolia"
+                  placeholder="4"
                   name="roomCount"
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="w-1/2">
+                <span className="uppercase text-sm font-semibold">мкв</span>
+                <input
+                  type="text"
+                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                  placeholder="64"
+                  name="mkv"
                   onChange={handleChange}
                 />
               </div>
@@ -130,35 +136,39 @@ export default function RealEstateForm() {
               <div className="flex w-full justify-between gap-4">
                 <div className="w-1/2">
                   <span className="uppercase text-sm font-semibold">
-                    Country
+                    Түрээсийн сарын төлбөр
                   </span>
                   <input
                     type="text"
                     className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="Mongolia"
-                    name="country"
+                    placeholder="10"
+                    name="price"
                     onChange={handleChange}
                   />
                 </div>
                 <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">
-                    Street
-                  </span>
-                  <input
-                    type="text"
-                    name="street"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="Сөүлийн гудамж"
+                  <label
+                    htmlFor="pay"
+                    className="uppercase text-sm font-semibold w-full"
+                  >
+                    Төлбөрийн нөхцөл
+                  </label>
+                  <select
+                    name="payment"
+                    defaultValue={"1"}
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
                     onChange={handleChange}
-                  />
+                  >
+                    <option value="1">1+1</option>
+                    <option value="1">3+1</option>
+                    <option value="2">6+2</option>
+                    <option value="3">9+1</option>
+                    <option value="4">10+1</option>
+                    <option value="5">12+1</option>
+                  </select>
                 </div>
               </div>
             </div>
-            <div className="space-y-2">
-              <div className="flex w-full justify-between gap-4"></div>
-            </div>
-            <div className="space-y-2"></div>
-
             <div className="space-y-2">
               <div className="flex justify-between gap-4">
                 <div className="w-1/2">
@@ -166,7 +176,7 @@ export default function RealEstateForm() {
                     htmlFor="people"
                     className="uppercase text-sm font-semibold w-full"
                   >
-                    Guests
+                    Түрээслэх хүний тоо
                   </label>
                   <select
                     name="guests"
@@ -183,17 +193,46 @@ export default function RealEstateForm() {
                 </div>
                 <div className="w-1/2">
                   <span className="uppercase text-sm font-semibold w-full">
-                    Photos
+                    Байрны Зураг
                   </span>
                   <div className="flex justify-between gap-4">
                     <input
                       type="text"
-                      name="photos"
+                      name="photo"
                       onChange={handleChange}
                       className="w-full h-12 px-3 border rounded-md focus:outline-none"
                       placeholder="url"
                     />
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <div className="flex w-full justify-between gap-4">
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    Нэмэлт мэдээлэл
+                  </span>
+                  <input
+                    type="text"
+                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="1-р сургуулийн урд"
+                    name="title"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="w-1/2">
+                  <span className="uppercase text-sm font-semibold">
+                    Байранд ашиглаж болох зүйлс
+                  </span>
+                  <input
+                    type="text"
+                    name="description"
+                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
+                    placeholder="Гал тогоо, угаалгын машин"
+                    onChange={handleChange}
+                  />
                 </div>
               </div>
             </div>
@@ -235,6 +274,7 @@ export default function RealEstateForm() {
       </div>
     </div>
   );
+
   async function createRealEstate() {
     try {
       if (state.length === 0) {
@@ -248,26 +288,22 @@ export default function RealEstateForm() {
       } = await getRealEstateFactoryContract();
 
       let realEstateForm = [
-        parseInt(state.type, 10),
-        parseInt(state.roomCount, 10),
         [
-          state.country,
+          state.khot,
+          state.duureg,
+          state.khoroo,
           state.street,
-          state.aptSuite,
-          state.city,
-          state.state,
-          state.zipCode,
+          state.orts,
+          state.toot,
         ],
-        [
-          parseInt(state.guests, 10),
-          parseInt(state.beds, 10),
-          parseInt(state.bedrooms, 10),
-          parseInt(state.bathrooms, 10),
-        ],
-        state.photos,
+        parseInt(state.guests, 10),
+        parseInt(state.roomCount, 10),
+        parseInt(state.mkv, 10),
+        state.photo,
         state.title,
         state.description,
         parseInt(state.price, 10),
+        state.payment,
       ];
 
       console.log("realEstateForm: ", realEstateForm);
