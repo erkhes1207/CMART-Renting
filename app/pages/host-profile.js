@@ -7,7 +7,7 @@ export default function HostProfile() {
         <div className='flex flex-col w-full h-[620px] justify-center sm:w-5/12 lg:w-4/12 border rounded-xl px-4 py-2 '>
           <div className='w-full flex justify-center'>
             <img
-              src='https://a0.muscache.com/im/pictures/user/7a035bd3-e491-4ca4-a06b-4841dca46c6e.jpg?aki_policy=profile_large'
+              src='https://i.imgur.com/oKBv9hj.jpeg'
               alt=''
               width={"130px"}
               height={"130px"}
@@ -30,7 +30,7 @@ export default function HostProfile() {
                   ></path>
                 </svg>
               </div>
-              <span>Superhost </span>
+              <span>Түрээслүүлэгч </span>
             </div>
             <div className='text-lg font-medium flex gap-2 mt-2'>
               <div className='mt-1'>
@@ -41,7 +41,7 @@ export default function HostProfile() {
                   ></path>
                 </svg>
               </div>
-              <span>974 reviews </span>
+              <span>11 reviews </span>
             </div>
             <div className='text-lg font-medium flex gap-2 mt-2'>
               <div className='mt-1'>
@@ -52,10 +52,10 @@ export default function HostProfile() {
                   ></path>
                 </svg>
               </div>
-              <span>Identify verified </span>
+              <span>Бүртгэл баталгаажсан </span>
             </div>
             <div className='border-b-2 my-5'></div>
-            <div className='font-semibold text-2xl'>Clay Confirmed</div>
+            <div className='font-semibold text-2xl'>Чингүн Баталгаажуулсан</div>
             <div className='text-lg font-medium flex gap-2 mt-2'>
               <div className='mt-1'>
                 <svg width='1.2em' height='1.2em' viewBox='0 0 24 24'>
@@ -65,7 +65,7 @@ export default function HostProfile() {
                   ></path>
                 </svg>
               </div>
-              <span>Identify </span>
+              <span>Бүртгэл </span>
             </div>
             <div className='text-lg font-medium flex gap-2 mt-2'>
               <div className='mt-1'>
@@ -76,7 +76,7 @@ export default function HostProfile() {
                   ></path>
                 </svg>
               </div>
-              <span>Email address </span>
+              <span>Email хаяг </span>
             </div>
             <div className='text-lg font-medium flex gap-2 mt-2'>
               <div className='mt-1'>
@@ -87,17 +87,16 @@ export default function HostProfile() {
                   ></path>
                 </svg>
               </div>
-              <span>Phone Number</span>
+              <span>Утасны дугаар</span>
             </div>
             <div className='text-sm mt-2'>
-              Learn more about how confirming account info helps keep the Airbnb
-              community secure.
+              Бүртгэл баталгаажуулалт хэрхэн явагддагийг мэдэх нь Cmart Renting-ийн community-г илүү аюулгүй болгоно.
             </div>
           </div>
         </div>
         <div className='w-full sm:w-7/12 lg:w-8/12'>
           <div className='flex items-center w-full justify-between'>
-            <span className='text-2xl font-medium'>My Real Estates</span>
+            <span className='text-2xl font-medium'>Чингүн</span>
             <button className='flex gap-1 border rounded-3xl px-4 py-2 items-center'>
               <span>All</span>
               <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
@@ -108,13 +107,11 @@ export default function HostProfile() {
               </svg>
             </button>
           </div>
-          <span className='text-sm text-slate-400'>Joined in 2020</span>{" "}
+          <span className='text-sm text-slate-400'>Бүртгүүлсэн он 2022</span>{" "}
           <div className='flex flex-col mt-4'>
-            <span className=' text-xl'>About</span>
+            <span className=' text-xl'>Миний тухай</span>
             <span className='mt-3 text-base'>
-              Hello! My daughter Harper and I are so glad you have chosen to
-              look at our yurts here in Cantwell, AK. We work hard to bring
-              Alaska’s beauty to all who stay with us while still supplying some
+              Сайн байцгаана уу! Чингүн байна. Идэвхитэй түрээслэгч хайж байгаа шүү. 
             </span>
           </div>
           <div className='text-base flex gap-2 mt-2'>
@@ -126,7 +123,7 @@ export default function HostProfile() {
                 ></path>
               </svg>
             </div>
-            <span className='mt-0.5'>Lives in Cantwell, AK</span>
+            <span className='mt-0.5'>Lives in Ulaanbaatar, Mongolia</span>
           </div>
           <div className='text-base flex gap-2 mt-2'>
             <div className='mt-1'>
@@ -137,18 +134,18 @@ export default function HostProfile() {
                 ></path>
               </svg>
             </div>
-            <span className='mt-0.5'>Work: Big Wild Outfitters</span>
+            <span className='mt-0.5'>Work: ШУТИС</span>
           </div>
           <div className='border-b-2 my-5'></div>
           <div>
-            <span className='text-2xl font-medium'>Clay's Listings</span>
+            <span className='text-2xl font-medium'>Чингүн-ий Зарууд</span>
             <div className='flex gap-5 mt-5'>
               <div>
                 <img
-                  src='https://a0.muscache.com/im/pictures/56682f82-99f6-4015-a494-7a90500729f0.jpg?im_w=1200'
+                  src='https://i.imgur.com/vVTbMJz.png'
                   alt=''
                   width={"300px"}
-                  height={"50px"}
+                  height={"225"}
                   className='rounded-lg'
                 />
                 <div className='text-base flex gap-2 mt-2'>
@@ -161,15 +158,15 @@ export default function HostProfile() {
                     </svg>
                   </div>
                   <span className='mt-0.5 text-sm'>
-                    4.94 <span className='text-slate-500'>(394)</span>
+                    4.34 <span className='text-slate-500'>(74)</span>
                   </span>{" "}
                 </div>
-                <span>Entire home/apt - Yurt</span>
+                <span>Яармагт 2 өрөө байр</span>
               </div>
 
               <div>
                 <img
-                  src='https://a0.muscache.com/im/pictures/1c016d30-9d6b-47a4-a64e-d6b7d3d4fcdb.jpg?im_w=960'
+                  src='https://i.imgur.com/HBe3Qy9.png'
                   alt=''
                   width={"300px"}
                   height={"50px"}
@@ -185,10 +182,10 @@ export default function HostProfile() {
                     </svg>
                   </div>
                   <span className='mt-0.5 text-sm'>
-                    4.94 <span className='text-slate-500'>(394)</span>
+                    4.95 <span className='text-slate-500'>(41)</span>
                   </span>{" "}
                 </div>
-                <span>Entire house - Mansion</span>
+                <span>Саруул хороололд 2 өрөө байр</span>
               </div>
             </div>
           </div>
@@ -208,108 +205,104 @@ export default function HostProfile() {
                   ></path>
                 </svg>
               </div>
-              <span className='mt-0.5 text-md'>203 reviews</span>
+              <span className='mt-0.5 text-md'>11 сэтгэгдэл</span>
             </div>
           </div>
           <div className='flex gap-3 mt-2'>
-            <span className='font-semibold'>From guests (153)</span>
-            <span className='font-semibold'>From hosts (50)</span>
+            <span className='font-semibold'>Түрээслэгчид(8)</span>
+            <span className='font-semibold'>Түрээслүүлэгчид (3)</span>
           </div>
           <div className='border-b-2 my-5'></div>
           <div>
             <div className='space-y-2'>
               <span className='font-semibold'>
-                "Experience Alaska" Yurt Rental #2 Open Year-Round
+                3 сар түрээслэсэн түрээслэгч
               </span>{" "}
               <br />
-              <span className='text-slate-500 text-sm'>October 2020</span>
+              <span className='text-slate-500 text-sm'>2022 он 7 сар</span>
               <p>
-                "the yurt was warm and comfortable. the view was incredible and
-                we woke up to a sunrise turning the mountains pink and glowing."
+                "Тун найрсаг түрээслүүлэгч байсан. Амжилт хүсье, дэмждэг шүү!"
               </p>
               <div className='flex'>
                 <img
-                  src='https://a0.muscache.com/im/pictures/user/7a035bd3-e491-4ca4-a06b-4841dca46c6e.jpg?aki_policy=profile_large'
+                  src='https://i.imgur.com/nRHu0yy.png'
                   alt=''
                   height={"60px"}
                   width={"60px"}
                   className='rounded-full mt-3'
                 />
                 <div className='flex flex-col mt-3 ml-3'>
-                  <span className='font-semibold'>Rebecca</span>
-                  <span className='text-slate-500 text-sm'>October 2020</span>
+                  <span className='font-semibold'>Санжаа Санжаа</span>
+                  <span className='text-slate-500 text-sm'>2022 он 7 сар</span>
                 </div>
               </div>
             </div>
             <div className='mt-10'>
               <span className='font-semibold'>
-                "Experience Alaska" Yurt Rental #2 Open Year-Round
+                1 сар түрээслэсэн түрээслэгч
               </span>{" "}
               <br />
-              <span className='text-slate-500 text-sm'>October 2020</span>
+              <span className='text-slate-500 text-sm'>2022 он 5 сар</span>
               <p>
-                "the yurt was warm and comfortable. the view was incredible and
-                we woke up to a sunrise turning the mountains pink and glowing."
+                "Xoopxon aashtai xvvxed bnlee. "
               </p>
               <div className='flex'>
                 <img
-                  src='https://a0.muscache.com/im/pictures/user/7a035bd3-e491-4ca4-a06b-4841dca46c6e.jpg?aki_policy=profile_large'
+                  src='https://i.imgur.com/srCeWbP.png'
                   alt=''
                   height={"60px"}
                   width={"60px"}
                   className='rounded-full mt-3'
                 />
                 <div className='flex flex-col mt-3 ml-3'>
-                  <span className='font-semibold'>Rebecca</span>
-                  <span className='text-slate-500 text-sm'>October 2020</span>
+                  <span className='font-semibold'>Пүрэвдулам</span>
+                  <span className='text-slate-500 text-sm'>2022 он 4 сар</span>
                 </div>
               </div>
             </div>
             <div className='mt-10'>
               <span className='font-semibold'>
-                "Experience Alaska" Yurt Rental #2 Open Year-Round
+                4 сар түрээслэсэн түрээслэгч
               </span>{" "}
               <br />
-              <span className='text-slate-500 text-sm'>October 2020</span>
+              <span className='text-slate-500 text-sm'>2021 он 5 сар</span>
               <p>
-                "the yurt was warm and comfortable. the view was incredible and
-                we woke up to a sunrise turning the mountains pink and glowing."
+                "Duud amjilt husye, ah n bayarlaj bga shu!"
               </p>
               <div className='flex'>
                 <img
-                  src='https://a0.muscache.com/im/pictures/user/7a035bd3-e491-4ca4-a06b-4841dca46c6e.jpg?aki_policy=profile_large'
+                  src='https://i.imgur.com/eBLm0M9.png'
                   alt=''
                   height={"60px"}
                   width={"60px"}
                   className='rounded-full mt-3'
                 />
                 <div className='flex flex-col mt-3 ml-3'>
-                  <span className='font-semibold'>Rebecca</span>
-                  <span className='text-slate-500 text-sm'>October 2020</span>
+                  <span className='font-semibold'>Bat</span>
+                  <span className='text-slate-500 text-sm'>2021 он 1 сар</span>
                 </div>
               </div>
             </div>
             <div className='mt-10'>
               <span className='font-semibold'>
-                "Experience Alaska" Yurt Rental #2 Open Year-Round
+                1 сар түрээслэсэн түрээслэгч
               </span>{" "}
               <br />
-              <span className='text-slate-500 text-sm'>October 2020</span>
+              <span className='text-slate-500 text-sm'>2020 он 10 сар</span>
               <p>
-                "the yurt was warm and comfortable. the view was incredible and
-                we woke up to a sunrise turning the mountains pink and glowing."
+                "Удаагүй ч гэсэн гэртэй болгож өгч, гэр бүлийн минь нэг хэсэг байсанд баярлалаа."
               </p>
               <div className='flex'>
                 <img
-                  src='https://a0.muscache.com/im/pictures/user/7a035bd3-e491-4ca4-a06b-4841dca46c6e.jpg?aki_policy=profile_large'
+                  src='https://i.imgur.com/oeN9N9b.png'
                   alt=''
                   height={"60px"}
                   width={"60px"}
                   className='rounded-full mt-3'
                 />
                 <div className='flex flex-col mt-3 ml-3'>
-                  <span className='font-semibold'>Rebecca</span>
-                  <span className='text-slate-500 text-sm'>October 2020</span>
+                  <span className='font-semibold'>Алтангэрэл</span>
+                  <span className='text-slate-500 text-sm'>2020 он 10 сар</span>
                 </div>
               </div>
             </div>
