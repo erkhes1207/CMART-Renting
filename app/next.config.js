@@ -13,6 +13,7 @@ module.exports = {
       "images.pexels.com",
       "upload.wikimedia.org",
       "i.imgur.com",
+      "imgur.com",
     ],
   },
 };
