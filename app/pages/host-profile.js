@@ -90,7 +90,8 @@ export default function HostProfile() {
               <span>Утасны дугаар</span>
             </div>
             <div className='text-sm mt-2'>
-              Бүртгэл баталгаажуулалт хэрхэн явагддагийг мэдэх нь Cmart Renting-ийн community-г илүү аюулгүй болгоно.
+              Бүртгэл баталгаажуулалт хэрхэн явагддагийг мэдэх нь Cmart
+              Renting-ийн community-г илүү аюулгүй болгоно.
             </div>
           </div>
         </div>
@@ -111,7 +112,8 @@ export default function HostProfile() {
           <div className='flex flex-col mt-4'>
             <span className=' text-xl'>Миний тухай</span>
             <span className='mt-3 text-base'>
-              Сайн байцгаана уу! Чингүн байна. Идэвхитэй түрээслэгч хайж байгаа шүү. 
+              Сайн байцгаана уу! Чингүн байна. Идэвхитэй түрээслэгч хайж байгаа
+              шүү.
             </span>
           </div>
           <div className='text-base flex gap-2 mt-2'>
@@ -214,6 +216,26 @@ export default function HostProfile() {
           </div>
           <div className='border-b-2 my-5'></div>
           <div>
+            <div
+              className={`flex px-5 py-3 gap-3 w-full items-center shadow-neu-inner-light rounded-xl select-none border mb-2`}
+            >
+              <svg width='1.2em' height='1.2em' viewBox='0 0 21 21'>
+                <path
+                  fill='none'
+                  stroke='currentColor'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  d='M17 4a2.121 2.121 0 0 1 0 3l-9.5 9.5l-4 1l1-3.944l9.504-9.552a2.116 2.116 0 0 1 2.864-.125zM9.5 17.5h8m-2-11l1 1'
+                ></path>
+              </svg>
+              <input
+                type='text'
+                placeholder='Сэтгэгдэл'
+                className='bg-transparent text-sm w-full focus:outline-none'
+                autoComplete='off'
+                autoFocus='off'
+              />
+            </div>
             <div className='space-y-2'>
               <span className='font-semibold'>
                 3 сар түрээслэсэн түрээслэгч
@@ -243,9 +265,7 @@ export default function HostProfile() {
               </span>{" "}
               <br />
               <span className='text-slate-500 text-sm'>2022 он 5 сар</span>
-              <p>
-                "Xoopxon aashtai xvvxed bnlee. "
-              </p>
+              <p>"Xoopxon aashtai xvvxed bnlee. "</p>
               <div className='flex'>
                 <img
                   src='https://i.imgur.com/srCeWbP.png'
@@ -266,9 +286,7 @@ export default function HostProfile() {
               </span>{" "}
               <br />
               <span className='text-slate-500 text-sm'>2021 он 5 сар</span>
-              <p>
-                "Duud amjilt husye, ah n bayarlaj bga shu!"
-              </p>
+              <p>"Duud amjilt husye, ah n bayarlaj bga shu!"</p>
               <div className='flex'>
                 <img
                   src='https://i.imgur.com/eBLm0M9.png'
@@ -290,7 +308,8 @@ export default function HostProfile() {
               <br />
               <span className='text-slate-500 text-sm'>2020 он 10 сар</span>
               <p>
-                "Удаагүй ч гэсэн гэртэй болгож өгч, гэр бүлийн минь нэг хэсэг байсанд баярлалаа."
+                "Удаагүй ч гэсэн гэртэй болгож өгч, гэр бүлийн минь нэг хэсэг
+                байсанд баярлалаа."
               </p>
               <div className='flex'>
                 <img
