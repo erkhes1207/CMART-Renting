@@ -7,14 +7,14 @@ export default function Register() {
   return (
     <div className='w-full mt-60'>
       <div className='flex justify-center'>
-        <span className='text-4xl'>Which one are you?</span>
+        <span className='text-4xl'>Та ямар хэрэглэгчээр бүртгүүлэх вэ?</span>
       </div>
       <div className='flex justify-center mt-5 text-2xl gap-5'>
         <button
           className=' px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	hover:text-[#f82f5d]'
           onClick={() => router.push("/host-form")}
         >
-          Host
+          Түрээслүүлэгч
         </button>
         <div className='border-r-4'></div>
 
@@ -22,7 +22,7 @@ export default function Register() {
           className='px-4 py-2 border-transparent rounded-lg cursor-pointer hover:bg-slate-50	hover:text-[#f82f5d] '
           onClick={() => router.push("/tenant-form")}
         >
-          Tenant
+          Түрээслэгч
         </button>
       </div>
     </div>

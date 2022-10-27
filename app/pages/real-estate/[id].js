@@ -88,14 +88,10 @@ const RealEstateDetail = () => {
                     <span>3 өрөө * 2 угаалгын өрөө * 84мк * Орон сууц</span>
                   </div>
                   <Link href={"/host-profile"}>
-                    <Image
-                      src={
-                        "https://a0.muscache.com/im/pictures/user/b448052f-c8a8-4dc7-8e32-62f1e68754f1.jpg?im_w=240"
-                      }
-                      width={"50px"}
-                      height={"50px"}
-                      alt='Profile image'
-                      layout='fixed'
+                    <img
+                      src='https://i.imgur.com/oKBv9hj.jpeg'
+                      alt=''
+                      width={"60px"}
                       className='rounded-full'
                     />
                   </Link>
