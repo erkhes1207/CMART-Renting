@@ -25,221 +25,221 @@ export default function RealEstateForm() {
   console.log("state: ", state);
 
   return (
-    <div className="w-full p-5 lg:p-3">
-      <div className="mt-10">
-        <div className="font-body">
-          <div className="w-full p-6 mx-auto my-5 border rounded-2xl space-y-6 sm:w-4/5 lg:w-1/2">
-            <div className="space-y-2">
-              <h3 className="text-xl font-semibold">Зар оруулах хүсэлт</h3>
+    <div className='w-full p-5 lg:p-3'>
+      <div className='mt-10'>
+        <div className='font-body'>
+          <div className='w-full p-6 mx-auto my-5 border rounded-2xl space-y-6 sm:w-4/5 lg:w-1/2'>
+            <div className='space-y-2'>
+              <h3 className='text-xl font-semibold'>Зар оруулах хүсэлт</h3>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex w-full justify-between gap-4">
-                <div className="w-1/3">
-                  <span className="uppercase text-sm font-semibold">Хот</span>
+            <div className='space-y-2'>
+              <div className='flex w-full justify-between gap-4'>
+                <div className='w-1/3'>
+                  <span className='uppercase text-sm font-semibold'>Хот</span>
                   <input
-                    type="text"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="Улаанбаатар"
-                    name="khot"
+                    type='text'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='Улаанбаатар'
+                    name='khot'
                     onChange={handleChange}
                   />
                 </div>
-                <div className="w-1/3">
-                  <span className="uppercase text-sm font-semibold">
+                <div className='w-1/3'>
+                  <span className='uppercase text-sm font-semibold'>
                     Дүүрэг
                   </span>
                   <input
-                    type="text"
-                    name="duureg"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="Баянзүрх"
+                    type='text'
+                    name='duureg'
+                    className='w-full  h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='Баянзүрх'
                     onChange={handleChange}
                   />
                 </div>
-                <div className="w-1/3">
-                  <span className="uppercase text-sm font-semibold">Хороо</span>
+                <div className='w-1/3'>
+                  <span className='uppercase text-sm font-semibold'>Хороо</span>
                   <input
-                    type="text"
-                    name="khoroo"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="4"
+                    type='text'
+                    name='khoroo'
+                    className='w-full  h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='4'
                     onChange={handleChange}
                   />
                 </div>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex w-full justify-between gap-4">
-                <div className="w-1/3">
-                  <span className="uppercase text-sm font-semibold">
+            <div className='space-y-2'>
+              <div className='flex w-full justify-between gap-4'>
+                <div className='w-1/3'>
+                  <span className='uppercase text-sm font-semibold'>
                     Гудамж, хотхон, байр
                   </span>
                   <input
-                    type="text"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="Сөүлийн гудамж, флора тауэр, 3-р байр"
-                    name="street"
+                    type='text'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='Сөүлийн гудамж, флора тауэр, 3-р байр'
+                    name='street'
                     onChange={handleChange}
                   />
                 </div>
-                <div className="w-1/3">
-                  <span className="uppercase text-sm font-semibold">Орц</span>
+                <div className='w-1/3'>
+                  <span className='uppercase text-sm font-semibold'>Орц</span>
                   <input
-                    type="text"
-                    name="orts"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="3"
+                    type='text'
+                    name='orts'
+                    className='w-full  h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='3'
                     onChange={handleChange}
                   />
                 </div>
-                <div className="w-1/3">
-                  <span className="uppercase text-sm font-semibold">Тоот</span>
+                <div className='w-1/3'>
+                  <span className='uppercase text-sm font-semibold'>Тоот</span>
                   <input
-                    type="text"
-                    name="toot"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="23"
+                    type='text'
+                    name='toot'
+                    className='w-full  h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='23'
                     onChange={handleChange}
                   />
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className="w-1/2">
-                <span className="uppercase text-sm font-semibold">
+            <div className='flex items-center gap-4'>
+              <div className='w-1/2'>
+                <span className='uppercase text-sm font-semibold'>
                   Өрөөний тоо
                 </span>
                 <input
-                  type="text"
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  placeholder="4"
-                  name="roomCount"
+                  type='text'
+                  className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                  placeholder='4'
+                  name='roomCount'
                   onChange={handleChange}
                 />
               </div>
-              <div className="w-1/2">
-                <span className="uppercase text-sm font-semibold">мкв</span>
+              <div className='w-1/2'>
+                <span className='uppercase text-sm font-semibold'>мкв</span>
                 <input
-                  type="text"
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  placeholder="64"
-                  name="mkv"
+                  type='text'
+                  className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                  placeholder='64'
+                  name='mkv'
                   onChange={handleChange}
                 />
               </div>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex w-full justify-between gap-4">
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">
+            <div className='space-y-2'>
+              <div className='flex w-full justify-between gap-4'>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold'>
                     Түрээсийн сарын төлбөр
                   </span>
                   <input
-                    type="text"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="10"
-                    name="price"
+                    type='text'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='10'
+                    name='price'
                     onChange={handleChange}
                   />
                 </div>
-                <div className="w-1/2">
+                <div className='w-1/2'>
                   <label
-                    htmlFor="pay"
-                    className="uppercase text-sm font-semibold w-full"
+                    htmlFor='pay'
+                    className='uppercase text-sm font-semibold w-full'
                   >
                     Төлбөрийн нөхцөл
                   </label>
                   <select
-                    name="payment"
+                    name='payment'
                     defaultValue={"1"}
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
                     onChange={handleChange}
                   >
-                    <option value="1">1+1</option>
-                    <option value="1">3+1</option>
-                    <option value="2">6+2</option>
-                    <option value="3">9+1</option>
-                    <option value="4">10+1</option>
-                    <option value="5">12+1</option>
+                    <option value='1'>1+1</option>
+                    <option value='1'>3+1</option>
+                    <option value='2'>6+2</option>
+                    <option value='3'>9+1</option>
+                    <option value='4'>10+1</option>
+                    <option value='5'>12+1</option>
                   </select>
                 </div>
               </div>
             </div>
-            <div className="space-y-2">
-              <div className="flex justify-between gap-4">
-                <div className="w-1/2">
+            <div className='space-y-2'>
+              <div className='flex justify-between gap-4'>
+                <div className='w-1/2'>
                   <label
-                    htmlFor="people"
-                    className="uppercase text-sm font-semibold w-full"
+                    htmlFor='people'
+                    className='uppercase text-sm font-semibold w-full'
                   >
                     Түрээслэх хүний тоо
                   </label>
                   <select
-                    name="guests"
+                    name='guests'
                     defaultValue={"1"}
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
                     onChange={handleChange}
                   >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                    <option value='5'>5</option>
                   </select>
                 </div>
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold w-full">
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold w-full'>
                     Байрны Зураг
                   </span>
-                  <div className="flex justify-between gap-4">
+                  <div className='flex justify-between gap-4'>
                     <input
-                      type="text"
-                      name="photo"
+                      type='text'
+                      name='photo'
                       onChange={handleChange}
-                      className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                      placeholder="url"
+                      className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                      placeholder='url'
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-2">
-              <div className="flex w-full justify-between gap-4">
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">
-                    Нэмэлт мэдээлэл
+            <div className='space-y-2'>
+              <div className='flex w-full justify-between gap-4'>
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold'>
+                    Гарчиг
                   </span>
                   <input
-                    type="text"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="1-р сургуулийн урд"
-                    name="title"
+                    type='text'
+                    className='w-full h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='1-р сургуулийн урд'
+                    name='title'
                     onChange={handleChange}
                   />
                 </div>
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">
-                    Байранд ашиглаж болох зүйлс
+                <div className='w-1/2'>
+                  <span className='uppercase text-sm font-semibold'>
+                    Нэмэлт мэдээлэл
                   </span>
                   <input
-                    type="text"
-                    name="description"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="Гал тогоо, угаалгын машин"
+                    type='text'
+                    name='description'
+                    className='w-full  h-12 px-3 border rounded-md focus:outline-none'
+                    placeholder='Гал тогоо, угаалгын машин'
                     onChange={handleChange}
                   />
                 </div>
               </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className='flex justify-center'>
               <button
-                className="w-1/5 flex justify-center items-center border rounded cursor-pointer p-2 text-white bg-[#f82f5d]"
+                className='w-1/5 flex justify-center items-center border rounded cursor-pointer p-2 text-white bg-[#f82f5d]'
                 onClick={() => handleCreateRealEstate()}
                 disabled={disableLoaderBtn ? true : false}
               >
@@ -250,17 +250,17 @@ export default function RealEstateForm() {
                         ? "fill-black"
                         : "text-blue-400 fill-white"
                     }  animate-spin `}
-                    viewBox="0 0 100 101"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox='0 0 100 101'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
                   >
                     <path
-                      d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                      fill="currentColor"
+                      d='M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z'
+                      fill='currentColor'
                     />
                     <path
-                      d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                      fill="currentFill"
+                      d='M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z'
+                      fill='currentFill'
                     />
                   </svg>
                 ) : (
@@ -283,9 +283,8 @@ export default function RealEstateForm() {
       }
       setDisableLoaderBtn(true);
       setLoading(true);
-      let {
-        realEstateFactoryWriteContract,
-      } = await getRealEstateFactoryContract();
+      let { realEstateFactoryWriteContract } =
+        await getRealEstateFactoryContract();
 
       let realEstateForm = [
         [
