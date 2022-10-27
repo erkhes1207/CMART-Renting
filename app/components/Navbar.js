@@ -30,7 +30,7 @@ const Navbar = () => {
           <Link href='/host-profile'>My Profile</Link>
           <Link href='/register'>Register</Link>
           <button
-            className='flex gap-2 items-center px-5 py-2 border rounded-3xl hover:bg-slate-50 hover:text-[#f82f5d] text-gray-500 font-semibold'
+            className='hidden sm:flex gap-2 items-center px-5 py-2 border rounded-3xl hover:bg-slate-50 hover:text-[#f82f5d] text-gray-500 font-semibold'
             onClick={() => {
               !metamask.isConnected ? dispatch(connectMetamask()) : "";
             }}

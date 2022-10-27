@@ -4,9 +4,9 @@ import Link from "next/link";
 const RealEstateDetail = () => {
   return (
     <div className='flex w-full h-full justify-center items-center min-h-screen mb-10'>
-      <div className='flex max-w-7xl w-full gap-5'>
+      <div className='flex sm:max-w-7xl w-full gap-5'>
         <section className='overflow-hidden text-gray-700 w-full'>
-          <div className='px-28 w-full'>
+          <div className='px-4 sm:px-28 w-full'>
             <div className='flex flex-col my-4'>
               <span className='text-3xl font-medium text-black'>
                 Яармагийн belmonte хотхонд тавилгатай 3 өрөө
@@ -79,7 +79,7 @@ const RealEstateDetail = () => {
               </div>
             </div>
             <div className='grid grid-cols-10'>
-              <div className='col-span-6 my-4'>
+              <div className='col-span-10 sm:col-span-6 my-4'>
                 <div className='flex justify-between w-full mt-4'>
                   <div className='flex flex-col gap-1'>
                     <span className='text-xl font-semibold'>
@@ -223,7 +223,7 @@ const RealEstateDetail = () => {
                   </div>
                 </div>
               </div>
-              <div className='col-span-4 flex flex-col border rounded-xl max-h-full ml-16 mt-8 p-7 h-52 shadow-xl'>
+              <div className='col-span-10 sm:col-span-4 flex flex-col border rounded-xl max-h-full sm:ml-16 mt-8 p-7 h-52 shadow-xl'>
                 <div className='flex justify-between items-center'>
                   <div className='flex items-end gap-1'>
                     <span className='text-xl'>2,200,000₮</span>
@@ -273,8 +273,8 @@ const RealEstateDetail = () => {
                 </svg>
                 <span className='text-xl'>4.95 · 12 сэтгэгдэл</span>
               </div>
-              <div className='flex items-center w-full gap-10'>
-                <div className='flex flex-col w-1/2 '>
+              <div className='flex flex-col sm:flex-row items-center w-full gap-10'>
+                <div className='flex flex-col w-full sm:w-1/2 '>
                   <div className='flex items-center justify-between w-full'>
                     <span>Цэвэр байдал</span>
                     <div className='flex items-center h-full gap-2'>
@@ -312,7 +312,7 @@ const RealEstateDetail = () => {
                     </div>
                   </div>
                 </div>
-                <div className='flex flex-col w-1/2 '>
+                <div className='flex flex-col w-full sm:w-1/2 '>
                   <div className='flex items-center justify-between w-full'>
                     <span>Үнийн нөхцөл</span>
                     <div className='flex items-center h-full gap-2'>
