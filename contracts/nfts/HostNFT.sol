@@ -2,7 +2,6 @@
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 
@@ -11,7 +10,7 @@ import "../interfaces/IHostNFT.sol";
 import "../structs/UserDetails.sol";
 import "../structs/UserReviews.sol";
 
-contract HostNFT is ERC721, AccessControl, IHostNFT {
+contract HostNFT is ERC721 {
     using Counters for Counters.Counter;
 
     UserDetails public userDetails;
@@ -19,21 +18,18 @@ contract HostNFT is ERC721, AccessControl, IHostNFT {
     mapping(address => UserReviews[]) public reviewsFromHost;
     mapping(address => UserReviews[]) public reviewsFromTenant;
 
-    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
-    bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
     Counters.Counter private _tokenIdCounter;
 
-    constructor(address _hostFactory) ERC721("HostNFT", "HST") {
-        _grantRole(DEFAULT_ADMIN_ROLE, _hostFactory);
-        _grantRole(BURNER_ROLE, _hostFactory);
+    address minter;
+    address burner;
 
-        _grantRole(MINTER_ROLE, _hostFactory);
+    constructor(address _hostFactory) ERC721("HostNFT", "HST") {
+        minter = _hostFactory;
+        burner = _hostFactory;
     }
 
     function hostMint(address to, UserDetails calldata _userDetails)
-        external
-        override
-        onlyRole(MINTER_ROLE)
+        external onlyMinter
         returns (uint)
     {
         uint256 tokenId = _tokenIdCounter.current();
@@ -43,22 +39,17 @@ contract HostNFT is ERC721, AccessControl, IHostNFT {
         UserDetails memory detail;
         detail = _userDetails;
 
-        emit hostMinted(to, tokenId);
-
         return tokenId;
     }
 
-    function hostBurn(uint256 tokenId) external override onlyRole(BURNER_ROLE) returns (uint) {
+    function hostBurn(uint256 tokenId) external onlyBurner returns (uint) {
         _burn(tokenId);
-
-        emit hostBurned(tokenId);
-
+        
         return tokenId;
     }
 
     function reviewFromHost(address _host, UserReviews calldata _userReviews)
         external
-        override
     {
         require(msg.sender == _host, "You can't review yourself");
         require(
@@ -66,27 +57,23 @@ contract HostNFT is ERC721, AccessControl, IHostNFT {
             "Review must be between 1-5"
         );
         reviewsFromHost[_host].push(_userReviews);
-
-        emit hostGotReviewed(_host, _userReviews);
     }
 
     function reviewFromTenant(address _host, UserReviews calldata _userReviews)
-        external override
+        external
     {
         require(
             _userReviews.numericReview <= 5 && _userReviews.numericReview > 0,
             "Review must be between 1-5"
         );
         reviewsFromHost[_host].push(_userReviews);
-
-        emit hostGotReviewed(_host, _userReviews);
     }
     
-    function getOwnDetail() external view override onlyOwner returns (UserDetails memory) {
+    function getOwnDetail() external view onlyOwner returns (UserDetails memory) {
         return userDetails;
     }
 
-    function getHostDetail() external view override returns (string memory, string memory, uint, string memory) {
+    function getHostDetail() external view returns (string memory, string memory, uint, string memory) {
         return (userDetails.name.firstName, userDetails.email, userDetails.phoneNumber, userDetails.joinedAt);
     }
 
@@ -95,12 +82,22 @@ contract HostNFT is ERC721, AccessControl, IHostNFT {
         _;
     }
 
+    modifier onlyMinter(){
+        require(msg.sender == minter, "Not minter");
+        _;
+    }
+
+    modifier onlyBurner(){
+        require(msg.sender == burner, "Not burner");
+        _;
+    }
+
     // The following functions are overrides required by Solidity.
 
     function supportsInterface(bytes4 interfaceId)
         public
         view
-        override(AccessControl, ERC721, IERC165)
+        override(ERC721)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);

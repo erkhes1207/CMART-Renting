@@ -6,9 +6,8 @@ import "./nfts/TenantNFT.sol";
 import "./structs/UserDetails.sol";
 
 import "./interfaces/ITenantNFT.sol";
-import "@openzeppelin/contracts/access/AccessControl.sol";
 
-contract TenantFactory is AccessControl {
+contract TenantFactory  {
   mapping(address => uint) public addressToTenantId;
   mapping(address => bool) public tenantHasNft;
   mapping(uint => address) public idToTenantAddress;
@@ -27,7 +26,6 @@ contract TenantFactory is AccessControl {
   );
 
   constructor() {
-    _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     nft = new TenantNFT(address(this));
   }
 

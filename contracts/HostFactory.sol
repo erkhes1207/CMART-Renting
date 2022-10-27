@@ -6,9 +6,8 @@ import "./nfts/HostNFT.sol";
 import "./structs/UserDetails.sol";
 
 import "./interfaces/IHostNFT.sol";
-import "@openzeppelin/contracts/access/AccessControl.sol";
 
-contract HostFactory is AccessControl {
+contract HostFactory {
   mapping(address => uint) public addressToHostId;
   mapping(address => bool) public hostHasNft;
   mapping(uint => address) public idToHostAddress;
@@ -27,7 +26,6 @@ contract HostFactory is AccessControl {
   );
 
   constructor() {
-    _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     nft = new HostNFT(address(this));
   }
 

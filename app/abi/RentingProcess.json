@@ -3,64 +3,14 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_hostNft",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "realEstateId",
-        "type": "uint256"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "hostAddress",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "bool",
-        "name": "isReferrable",
-        "type": "bool"
-      }
-    ],
-    "name": "RealEstateCreated",
-    "type": "event"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
+        "name": "_creator",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "",
+        "name": "_realEstateId",
         "type": "uint256"
-      }
-    ],
-    "name": "addressToHostRealEstateIds",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
+      },
       {
         "components": [
           {
@@ -141,64 +91,63 @@
         "type": "tuple"
       }
     ],
-    "name": "createRealEstate",
-    "outputs": [],
     "stateMutability": "nonpayable",
-    "type": "function"
+    "type": "constructor"
   },
   {
-    "inputs": [],
-    "name": "getAllRealEstateIds",
-    "outputs": [
-      {
-        "internalType": "uint256[]",
-        "name": "",
-        "type": "uint256[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getHostAllRealEstates",
-    "outputs": [
-      {
-        "internalType": "uint256[]",
-        "name": "",
-        "type": "uint256[]"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
+    "anonymous": false,
     "inputs": [
       {
+        "indexed": true,
         "internalType": "address",
-        "name": "_host",
+        "name": "user",
         "type": "address"
       }
     ],
-    "name": "getHostRealEstateIds",
+    "name": "NftMinted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "enum RealEstateStatus",
+        "name": "realEstateStatus",
+        "type": "uint8"
+      }
+    ],
+    "name": "RealEstateStatusChanged",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "creator",
     "outputs": [
       {
-        "internalType": "uint256[]",
+        "internalType": "address",
         "name": "",
-        "type": "uint256[]"
+        "type": "address"
       }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "getBalance",
+    "outputs": [
       {
         "internalType": "uint256",
-        "name": "_realEstateId",
+        "name": "",
         "type": "uint256"
       }
     ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "getRealEstateDetails",
     "outputs": [
       {
@@ -299,6 +248,106 @@
   },
   {
     "inputs": [],
+    "name": "mint",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "nft",
+    "outputs": [
+      {
+        "internalType": "contract RealEstateNFT",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "realEstateDetails",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "khot",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "duureg",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "khoroo",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "street",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "orts",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "toot",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct AddressDetail",
+        "name": "location",
+        "type": "tuple"
+      },
+      {
+        "internalType": "int256",
+        "name": "roomCount",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "mkv",
+        "type": "int256"
+      },
+      {
+        "internalType": "string",
+        "name": "photo",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "internalType": "int256",
+        "name": "price",
+        "type": "int256"
+      },
+      {
+        "internalType": "int256",
+        "name": "payment",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "realEstateId",
     "outputs": [
       {
@@ -311,38 +360,26 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "realEstateIdToAddress",
+    "inputs": [],
+    "name": "realEstateStatus",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "enum RealEstateStatus",
         "name": "",
-        "type": "address"
+        "type": "uint8"
       }
     ],
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "realEstateIds",
+    "inputs": [],
+    "name": "tenantNft",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "contract ITenantNFT",
         "name": "",
-        "type": "uint256"
+        "type": "address"
       }
     ],
     "stateMutability": "view",

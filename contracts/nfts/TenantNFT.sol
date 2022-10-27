@@ -2,7 +2,6 @@
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 
@@ -11,7 +10,7 @@ import "../interfaces/ITenantNFT.sol";
 import "../structs/UserDetails.sol";
 import "../structs/UserReviews.sol";
 
-contract TenantNFT is ERC721, AccessControl, ITenantNFT {
+contract TenantNFT is ERC721 {
     using Counters for Counters.Counter;
 
     UserDetails public userDetails;
@@ -19,21 +18,20 @@ contract TenantNFT is ERC721, AccessControl, ITenantNFT {
     mapping(address => UserReviews[]) public reviewsFromHost;
     mapping(address => UserReviews[]) public reviewsFromTenant;
  
-    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
-    bytes32 public constant BURNER_ROLE = keccak256("BURNER_ROLE");
+    address minter;
+    address burner;
+
     Counters.Counter private _tokenIdCounter;
 
     constructor(address _tenantFactory) ERC721("TenantNFT", "TNNT") {
-        _grantRole(DEFAULT_ADMIN_ROLE, _tenantFactory);
-        _grantRole(BURNER_ROLE, _tenantFactory);
-        
-        _grantRole(MINTER_ROLE, _tenantFactory);
+        minter = _tenantFactory;
+        burner = _tenantFactory;
     }
 
     function tenantMint(
         address to,
         UserDetails calldata _userDetails
-    ) external override onlyRole(MINTER_ROLE) returns (uint) {
+    ) external onlyMinter returns (uint) {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
@@ -41,38 +39,30 @@ contract TenantNFT is ERC721, AccessControl, ITenantNFT {
         UserDetails memory detail;
         detail = _userDetails;
 
-        emit tenantMinted(to, tokenId);
-
         return tokenId;
     }
 
-    function tenantBurn (uint256 tokenId) external override onlyRole(BURNER_ROLE) returns (uint) {
+    function tenantBurn (uint256 tokenId) external onlyBurner returns (uint) {
         _burn(tokenId);
 
-        emit tenantBurned(tokenId);
-
         return tokenId;
     }
 
-    function reviewFromHost(address _tenant, UserReviews calldata _userReviews) external override {
+    function reviewFromHost(address _tenant, UserReviews calldata _userReviews) external {
         require(_userReviews.numericReview <= 5 && _userReviews.numericReview > 0, "Review must be between 1-5");
         reviewsFromHost[_tenant].push(_userReviews);
-
-        emit tenantGotReviewed(_tenant, _userReviews);
     }
 
-    function reviewFromTenant(address _tenant, UserReviews calldata _userReviews) external onlyRole(MINTER_ROLE) {
+    function reviewFromTenant(address _tenant, UserReviews calldata _userReviews) external{
         require(_userReviews.numericReview <= 5 && _userReviews.numericReview > 0, "Review must be between 1-5");
         reviewsFromHost[_tenant].push(_userReviews);
-
-        emit tenantGotReviewed(_tenant, _userReviews);
     }
     
-    function getOwnDetail() external view override onlyOwner returns (UserDetails memory) {
+    function getOwnDetail() external view onlyOwner returns (UserDetails memory) {
         return userDetails;
     }
 
-    function getTenantDetail() external view override returns (string memory, string memory, uint, string memory) {
+    function getTenantDetail() external view returns (string memory, string memory, uint, string memory) {
         return (userDetails.name.firstName, userDetails.email, userDetails.phoneNumber, userDetails.joinedAt);
     }
     
@@ -81,14 +71,18 @@ contract TenantNFT is ERC721, AccessControl, ITenantNFT {
         _;
     }
 
+    modifier onlyMinter(){
+        require(msg.sender == minter, "Not minter");
+        _;
+    }
+
+    modifier onlyBurner(){
+        require(msg.sender == burner, "Not burner");
+        _;
+    }
     // The following functions are overrides required by Solidity.
 
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        override(ERC721, AccessControl, IERC165)
-        returns (bool)
-    {
+    function supportsInterface(bytes4 interfaceId) public view override(ERC721) returns (bool) {
         return super.supportsInterface(interfaceId);
     }
 }
