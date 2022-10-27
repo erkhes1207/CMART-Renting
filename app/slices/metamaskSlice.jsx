@@ -41,8 +41,11 @@ const metamaskSlice = createSlice({
   },
 });
 
-export const { checkMetamask, checkConnected, disconnectMetamask } =
-  metamaskSlice.actions;
+export const {
+  checkMetamask,
+  checkConnected,
+  disconnectMetamask,
+} = metamaskSlice.actions;
 
 export const connectMetamask = () => {
   return async (dispatch, getState) => {
