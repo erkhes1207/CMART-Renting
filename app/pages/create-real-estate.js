@@ -113,24 +113,6 @@ export default function RealEstateForm() {
 
             <div className="flex items-center gap-4">
               <div className="w-1/2">
-                <span className="uppercase text-sm font-semibold w-full">
-                  Хороо
-                </span>
-                <select
-                  name="khoroo"
-                  defaultValue={"0"}
-                  className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                  onChange={handleChange}
-                >
-                  <option value="0">Apartment</option>
-                  <option value="1">House</option>
-                  <option value="2">Secondary Unit</option>
-                  <option value="3">Unique Space</option>
-                  <option value="4">Bed and Breakfast</option>
-                  <option value="5">Boutique Hotel</option>
-                </select>
-              </div>
-              <div className="w-1/2">
                 <span className="uppercase text-sm font-semibold">
                   Room Count
                 </span>
@@ -173,57 +155,9 @@ export default function RealEstateForm() {
               </div>
             </div>
             <div className="space-y-2">
-              <div className="flex w-full justify-between gap-4">
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">
-                    Apt Suite
-                  </span>
-                  <input
-                    type="text"
-                    name="aptSuite"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="apt suite"
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">City</span>
-                  <input
-                    type="text"
-                    name="city"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="Ulaanbaatar"
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
+              <div className="flex w-full justify-between gap-4"></div>
             </div>
-            <div className="space-y-2">
-              <div className="flex w-full justify-between gap-4">
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">State</span>
-                  <input
-                    type="text"
-                    name="state"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="state"
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold">
-                    Zip Code
-                  </span>
-                  <input
-                    type="text"
-                    name="zipCode"
-                    className="w-full  h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="000121"
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-            </div>
+            <div className="space-y-2"></div>
 
             <div className="space-y-2">
               <div className="flex justify-between gap-4">
@@ -260,65 +194,6 @@ export default function RealEstateForm() {
                       placeholder="url"
                     />
                   </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex justify-between gap-4">
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold w-full">
-                    Beds
-                  </span>
-                  <input
-                    type="text"
-                    name="beds"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="2 beds"
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold w-full">
-                    Bed Rooms
-                  </span>
-                  <input
-                    type="text"
-                    name="bedrooms"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="
-                    2 bathrooms"
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex justify-between gap-4">
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold w-full">
-                    Bath rooms
-                  </span>
-                  <input
-                    type="text"
-                    name="bathrooms"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="2 bathrooms"
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="w-1/2">
-                  <span className="uppercase text-sm font-semibold w-full">
-                    Price
-                  </span>
-                  <input
-                    type="text"
-                    name="price"
-                    className="w-full h-12 px-3 border rounded-md focus:outline-none"
-                    placeholder="100 ETH"
-                    onChange={handleChange}
-                  />
                 </div>
               </div>
             </div>
