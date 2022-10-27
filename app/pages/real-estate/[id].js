@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const RealEstateDetail = () => {
   return (
@@ -82,40 +83,113 @@ const RealEstateDetail = () => {
                 <div className='flex justify-between w-full mt-4'>
                   <div className='flex flex-col gap-1'>
                     <span className='text-xl font-semibold'>
-                      Entire home hosted by Pekka
+                      Яармагийн belmonte хотхонд тавилгатай 3 өрөө
                     </span>
-                    <span>6 guests * 3 bedrooms * 6 beds * 1 bath</span>
+                    <span>3 өрөө * 2 угаалгын өрөө * 84мк * Орон сууц</span>
                   </div>
-                  <Image
-                    src={
-                      "https://a0.muscache.com/im/pictures/user/b448052f-c8a8-4dc7-8e32-62f1e68754f1.jpg?im_w=240"
-                    }
-                    width={"50px"}
-                    height={"50px"}
-                    alt='Profile image'
-                    layout='fixed'
-                    className='rounded-full'
-                  />
+                  <Link href={"/host-profile"}>
+                    <Image
+                      src={
+                        "https://a0.muscache.com/im/pictures/user/b448052f-c8a8-4dc7-8e32-62f1e68754f1.jpg?im_w=240"
+                      }
+                      width={"50px"}
+                      height={"50px"}
+                      alt='Profile image'
+                      layout='fixed'
+                      className='rounded-full'
+                    />
+                  </Link>
+                </div>
+
+                <div className='h-[1px] w-full my-5 bg-gray-300'></div>
+                <div className='w-full'>
+                  <span className='text-2xl font-semibold'>Давуу талууд</span>
+                  <div className='flex mt-5 w-full'>
+                    <div className='flex flex-col gap-2 w-1/2'>
+                      <div className='flex gap-2'>
+                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
+                          <path
+                            fill='none'
+                            stroke='currentColor'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
+                            strokeWidth='2'
+                            d='M19 3v12h-5c-.023-3.681.184-7.406 5-12zm0 12v6h-1v-3M8 4v17M5 4v3a3 3 0 1 0 6 0V4'
+                          ></path>
+                        </svg>
+                        <span>Гал тогооны тавилга</span>
+                      </div>
+                      <div className='flex gap-2'>
+                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
+                          <path
+                            fill='currentColor'
+                            d='M6 19v.525q0 .625-.425 1.05Q5.15 21 4.5 21q-.625 0-1.062-.438Q3 20.125 3 19.5V12l2.1-6q.15-.45.538-.725Q6.025 5 6.5 5h11q.475 0 .863.275q.387.275.537.725l2.1 6v7.525q0 .625-.425 1.05Q20.15 21 19.5 21q-.625 0-1.062-.438Q18 20.125 18 19.5V19Zm-.2-9h12.4l-1.05-3H6.85ZM5 12v5Zm2.5 4q.625 0 1.062-.438Q9 15.125 9 14.5t-.438-1.062Q8.125 13 7.5 13t-1.062.438Q6 13.875 6 14.5t.438 1.062Q6.875 16 7.5 16Zm9 0q.625 0 1.062-.438Q18 15.125 18 14.5t-.438-1.062Q17.125 13 16.5 13t-1.062.438Q15 13.875 15 14.5t.438 1.062Q15.875 16 16.5 16ZM5 17h14v-5H5Z'
+                          ></path>
+                        </svg>
+                        <span>Байрны зогсоолтой</span>
+                      </div>
+                      <div className='flex gap-2'>
+                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
+                          <path
+                            fill='currentColor'
+                            d='m6.35 15.35l-2.1-2.15q1.475-1.475 3.463-2.337Q9.7 10 12 10t4.288.875q1.987.875 3.462 2.375l-2.1 2.1q-1.1-1.1-2.55-1.725Q13.65 13 12 13q-1.65 0-3.1.625q-1.45.625-2.55 1.725ZM2.1 11.1L0 9q2.3-2.35 5.375-3.675Q8.45 4 12 4t6.625 1.325Q21.7 6.65 24 9l-2.1 2.1q-1.925-1.925-4.462-3.013Q14.9 7 12 7T6.562 8.087Q4.025 9.175 2.1 11.1ZM12 21l3.525-3.55q-.675-.675-1.575-1.063Q13.05 16 12 16q-1.05 0-1.95.387q-.9.388-1.575 1.063Z'
+                          ></path>
+                        </svg>
+                        <span>Wifi интернет холбогдсон</span>
+                      </div>
+                      <div className='flex gap-2'>
+                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
+                          <path
+                            fill='currentColor'
+                            d='M21 17H3V5h18m0-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z'
+                          ></path>
+                        </svg>
+                        <span>42" HDTV with Netflix зурагттай</span>
+                      </div>
+                    </div>
+                    <div className='flex flex-col gap-2 w-1/2'>
+                      <div className='flex gap-2'>
+                        <svg width='1.5em' height='1.5em' viewBox='0 0 512 512'>
+                          <path
+                            fill='currentColor'
+                            d='m240.801 293.826l-23.851 23.851l23.8 47.6l23.417-24.718l-23.366-46.733zm15.177 101.906l22.299 44.6l23.418-24.719l-22.3-44.599l-23.417 24.718zM438.926 202.62L415.8 227.032l44.423 21.246l23.127-24.412l-44.424-21.246zm-96.323-10.596l42.861 20.499l23.127-24.411l-41.992-20.084l-23.996 23.996zm-34.818 149.022l28.523 38.031l22.325-23.565l-28.523-38.031l-22.325 23.565zm2.848-49.534l-28.936-38.582l-22.857 22.857l29.468 39.29l22.325-23.565zm-9.89-57.628l36.683 29.347l22.085-23.313l-36.001-28.801l-22.767 22.767zm61.758 49.407l36.721 29.377l22.085-23.313l-36.721-29.376l-22.085 23.312zm-13.814-182.604l-26.24 26.239l-24.718-24.718a111.609 111.609 0 0 0-157.839 0c-.342.341-.673.689-1.009 1.034A77.974 77.974 0 0 0 16 166.988V408h32V166.988a45.975 45.975 0 0 1 72.048-37.868a111.809 111.809 0 0 0 19.842 130.929l24.717 24.717l-23.92 23.921l20 20l208-208ZM185.006 259.911l-22.489-22.489A79.611 79.611 0 0 1 275.1 124.835l22.489 22.49Z'
+                          ></path>
+                        </svg>
+                        <span>Шүршүүр</span>
+                      </div>
+                      <div className='flex gap-2'>
+                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
+                          <path
+                            fill='currentColor'
+                            d='M17 2H7c-1.1 0-2 .9-2 2v15a2 2 0 0 0 2 2v1h2v-1h6v1h2v-1c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m0 17H7V4h10v15m-7-4H8v-5h2v5Z'
+                          ></path>
+                        </svg>
+                        <span>Хөргөгчтэй</span>
+                      </div>
+                      <div className='flex gap-2'>
+                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
+                          <path
+                            fill='currentColor'
+                            d='M7.95 3L6.53 5.19L7.95 7.4h-.01l-1.99 3.1l-1.73-.9l1.42-2.21l-1.42-2.2l2-3.1L7.95 3m6-.11L12.53 5.1l1.42 2.2l-.01.01l-1.99 3.09l-1.73-.9l1.42-2.2l-1.42-2.2l2-3.1l1.73.89m6.05 0L18.56 5.1L20 7.3v.01l-2 3.09l-1.75-.9l1.42-2.2l-1.42-2.2l2-3.1l1.75.89M2 22v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8h-2v-2H4v2H2m4-8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1m4 0a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1Z'
+                          ></path>
+                        </svg>
+                        <span>Төвийн халаалт</span>
+                      </div>
+                      <div className='flex gap-2'>
+                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
+                          <path
+                            fill='currentColor'
+                            d='M5 21q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h14q.825 0 1.413.587Q21 4.175 21 5v14q0 .825-.587 1.413Q19.825 21 19 21Zm0-9v7h14v-7h-2v5H7v-5Zm4 3h6v-3H9Zm-4-5h14V5H5Zm3-2q-.425 0-.713-.287Q7 7.425 7 7t.287-.713Q7.575 6 8 6t.713.287Q9 6.575 9 7t-.287.713Q8.425 8 8 8Zm4 0q-.425 0-.712-.287Q11 7.425 11 7t.288-.713Q11.575 6 12 6t.713.287Q13 6.575 13 7t-.287.713Q12.425 8 12 8Zm4 0q-.425 0-.712-.287Q15 7.425 15 7t.288-.713Q15.575 6 16 6t.712.287Q17 6.575 17 7t-.288.713Q16.425 8 16 8Z'
+                          ></path>
+                        </svg>
+                        <span>Плетка</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div className='h-[1px] w-full my-5 bg-gray-300'></div>
                 <div className='flex flex-col gap-4 w-full'>
-                  <div className='flex gap-4 items-start'>
-                    <svg width='2em' height='2em' viewBox='0 0 24 24'>
-                      <path
-                        fill='currentColor'
-                        d='M11 13q.425 0 .713-.288Q12 12.425 12 12t-.287-.713Q11.425 11 11 11t-.712.287Q10 11.575 10 12t.288.712Q10.575 13 11 13Zm-4 8v-2l6-1V6.875q0-.375-.225-.675q-.225-.3-.575-.35L7 5V3l5.5.9q1.1.2 1.8 1.025T15 6.85v12.8Zm-4 0v-2h2V5q0-.85.588-1.425Q6.175 3 7 3h10q.85 0 1.425.575Q19 4.15 19 5v14h2v2Zm4-2h10V5H7Z'
-                      ></path>
-                    </svg>
-                    <div className='flex flex-col'>
-                      <span className='text-md font-semibold'>
-                        Self check-in
-                      </span>
-                      <span className='text-sm'>
-                        Check yourself in with the lockbox.
-                      </span>
-                    </div>
-                  </div>
-                  <div className='flex gap-4 items-start'>
+                  <div className='flex gap-4 items-center'>
                     <svg width='2em' height='2em' viewBox='0 0 48 48'>
                       <g
                         fill='none'
@@ -130,15 +204,11 @@ const RealEstateDetail = () => {
                     </svg>
                     <div className='flex flex-col'>
                       <span className='text-md font-semibold'>
-                        Pekka is a Superhost
-                      </span>
-                      <span className='text-sm'>
-                        Superhosts are experienced, highly rated hosts who are
-                        committed to providing great stays for guests.
+                        Сайн түрээслэгч
                       </span>
                     </div>
                   </div>
-                  <div className='flex gap-4 items-start'>
+                  <div className='flex gap-4 items-center'>
                     <svg width='2em' height='2em' viewBox='0 0 512 512'>
                       <path
                         fill='currentColor'
@@ -151,61 +221,8 @@ const RealEstateDetail = () => {
                     </svg>
                     <div className='flex flex-col'>
                       <span className='text-md font-semibold'>
-                        Great location
+                        Байршил сайтай
                       </span>
-                      <span className='text-sm'>
-                        100% of recent guests gave the location a 5-star rating.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className='h-[1px] w-full my-5 bg-gray-300'></div>
-                <div className='w-full'>
-                  <span className='text-2xl font-semibold'>
-                    What this place offers
-                  </span>
-                  <div className='flex mt-5 w-full'>
-                    <div className='flex flex-col gap-2'>
-                      <div className='flex gap-2'>
-                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
-                          <path
-                            fill='none'
-                            stroke='currentColor'
-                            strokeLinecap='round'
-                            strokeLinejoin='round'
-                            strokeWidth='2'
-                            d='M19 3v12h-5c-.023-3.681.184-7.406 5-12zm0 12v6h-1v-3M8 4v17M5 4v3a3 3 0 1 0 6 0V4'
-                          ></path>
-                        </svg>
-                        <span>Kitchen</span>
-                      </div>
-                      <div className='flex gap-2'>
-                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
-                          <path
-                            fill='currentColor'
-                            d='M6 19v.525q0 .625-.425 1.05Q5.15 21 4.5 21q-.625 0-1.062-.438Q3 20.125 3 19.5V12l2.1-6q.15-.45.538-.725Q6.025 5 6.5 5h11q.475 0 .863.275q.387.275.537.725l2.1 6v7.525q0 .625-.425 1.05Q20.15 21 19.5 21q-.625 0-1.062-.438Q18 20.125 18 19.5V19Zm-.2-9h12.4l-1.05-3H6.85ZM5 12v5Zm2.5 4q.625 0 1.062-.438Q9 15.125 9 14.5t-.438-1.062Q8.125 13 7.5 13t-1.062.438Q6 13.875 6 14.5t.438 1.062Q6.875 16 7.5 16Zm9 0q.625 0 1.062-.438Q18 15.125 18 14.5t-.438-1.062Q17.125 13 16.5 13t-1.062.438Q15 13.875 15 14.5t.438 1.062Q15.875 16 16.5 16ZM5 17h14v-5H5Z'
-                          ></path>
-                        </svg>
-                        <span>Free parking on premises</span>
-                      </div>
-                      <div className='flex gap-2'>
-                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
-                          <path
-                            fill='currentColor'
-                            d='m6.35 15.35l-2.1-2.15q1.475-1.475 3.463-2.337Q9.7 10 12 10t4.288.875q1.987.875 3.462 2.375l-2.1 2.1q-1.1-1.1-2.55-1.725Q13.65 13 12 13q-1.65 0-3.1.625q-1.45.625-2.55 1.725ZM2.1 11.1L0 9q2.3-2.35 5.375-3.675Q8.45 4 12 4t6.625 1.325Q21.7 6.65 24 9l-2.1 2.1q-1.925-1.925-4.462-3.013Q14.9 7 12 7T6.562 8.087Q4.025 9.175 2.1 11.1ZM12 21l3.525-3.55q-.675-.675-1.575-1.063Q13.05 16 12 16q-1.05 0-1.95.387q-.9.388-1.575 1.063Z'
-                          ></path>
-                        </svg>
-                        <span>Wifi</span>
-                      </div>
-                      <div className='flex gap-2'>
-                        <svg width='1.5em' height='1.5em' viewBox='0 0 24 24'>
-                          <path
-                            fill='currentColor'
-                            d='M21 17H3V5h18m0-2H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Z'
-                          ></path>
-                        </svg>
-                        <span>42" HDTV with Netflix</span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -213,8 +230,8 @@ const RealEstateDetail = () => {
               <div className='col-span-4 flex flex-col border rounded-xl max-h-full ml-16 mt-8 p-7 h-52 shadow-xl'>
                 <div className='flex justify-between items-center'>
                   <div className='flex items-end gap-1'>
-                    <span className='text-xl'>$108.45</span>
-                    <span className='text-sm'>night</span>
+                    <span className='text-xl'>2,200,000₮</span>
+                    <span className='text-sm'>/ сар</span>
                   </div>
                   <div className='flex items-center gap-1 text-sm'>
                     <svg width='1em' height='1em' viewBox='0 0 24 24'>
@@ -223,7 +240,7 @@ const RealEstateDetail = () => {
                         d='m5.825 22l1.625-7.025L2 10.25l7.2-.625L12 3l2.8 6.625l7.2.625l-5.45 4.725L18.175 22L12 18.275Z'
                       ></path>
                     </svg>
-                    <span>4.95 · 40 reviews</span>
+                    <span>4.95 · 12 сэтгэгдэл</span>
                   </div>
                 </div>
                 <div className='flex flex-col mt-4'>
@@ -244,7 +261,7 @@ const RealEstateDetail = () => {
                     </div>
                   </div>
                   <button className='flex w-full justify-center py-2 bg-rose-500 rounded-md text-white text-center mt-4'>
-                    <span>Check availability</span>
+                    <span>Түрээслэх</span>
                   </button>
                 </div>
               </div>
@@ -258,29 +275,29 @@ const RealEstateDetail = () => {
                     d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21L12 17.27z'
                   ></path>
                 </svg>
-                <span className='text-xl'>4.95 · 40 reviews</span>
+                <span className='text-xl'>4.95 · 12 сэтгэгдэл</span>
               </div>
               <div className='flex items-center w-full gap-10'>
                 <div className='flex flex-col w-1/2 '>
                   <div className='flex items-center justify-between w-full'>
-                    <span>Cleanliness</span>
+                    <span>Цэвэр байдал</span>
                     <div className='flex items-center h-full gap-2'>
                       <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
                         <div
                           className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
-                          style={{ width: "45%" }}
+                          style={{ width: "100%" }}
                         ></div>
                       </div>
-                      <span>4.8</span>
+                      <span>5.0</span>
                     </div>
                   </div>
                   <div className='flex items-center justify-between w-full'>
-                    <span>Communication</span>
+                    <span>Харилцаа</span>
                     <div className='flex items-center h-full gap-2'>
                       <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
                         <div
                           className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
-                          style={{ width: "45%" }}
+                          style={{ width: "85%" }}
                         ></div>
                       </div>
                       <span>4.8</span>
@@ -292,7 +309,7 @@ const RealEstateDetail = () => {
                       <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
                         <div
                           className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
-                          style={{ width: "45%" }}
+                          style={{ width: "90%" }}
                         ></div>
                       </div>
                       <span>4.8</span>
@@ -301,31 +318,19 @@ const RealEstateDetail = () => {
                 </div>
                 <div className='flex flex-col w-1/2 '>
                   <div className='flex items-center justify-between w-full'>
-                    <span>Cleanliness</span>
+                    <span>Үнийн нөхцөл</span>
                     <div className='flex items-center h-full gap-2'>
                       <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
                         <div
                           className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
-                          style={{ width: "45%" }}
+                          style={{ width: "81%" }}
                         ></div>
                       </div>
                       <span>4.8</span>
                     </div>
                   </div>
                   <div className='flex items-center justify-between w-full'>
-                    <span>Communication</span>
-                    <div className='flex items-center h-full gap-2'>
-                      <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
-                        <div
-                          className='bg-blue-600 h-1.5 rounded-full flex items-center justify-center'
-                          style={{ width: "45%" }}
-                        ></div>
-                      </div>
-                      <span>4.8</span>
-                    </div>
-                  </div>
-                  <div className='flex items-center justify-between w-full'>
-                    <span>Check-in</span>
+                    <span>Байршил</span>
                     <div className='flex items-center h-full gap-2'>
                       <div className='flex w-40 bg-gray-200 rounded-full h-1.5 mb-4 '>
                         <div

@@ -16,8 +16,8 @@ export default function Home() {
   console.log("realEstate: ", realEstate);
 
   return (
-    <div className="flex w-full justify-center items-center">
-      <div className="grid grid-cols-4 max-w-7xl w-full gap-6">
+    <div className='flex w-full justify-center items-center mt-5'>
+      <div className='grid grid-cols-4 max-w-7xl w-full gap-6'>
         {realEstate &&
           realEstate.map((item, index) => (
             <RealEstateCard data={item} id={index + 1} />
@@ -27,10 +27,10 @@ export default function Home() {
   );
 
   async function getAllRealEstates() {
-    const {
-      realEstateFactoryReadContract,
-    } = await getRealEstateFactoryContract();
-    let allRealEstateIds = await realEstateFactoryReadContract.getAllRealEstateIds();
+    const { realEstateFactoryReadContract } =
+      await getRealEstateFactoryContract();
+    let allRealEstateIds =
+      await realEstateFactoryReadContract.getAllRealEstateIds();
     let realEstateDataArray = [];
 
     setLoading(true);
@@ -39,9 +39,10 @@ export default function Home() {
       let realEstateAddress = null;
 
       try {
-        realEstateAddress = await realEstateFactoryReadContract.realEstateIdToAddress(
-          id.toNumber()
-        );
+        realEstateAddress =
+          await realEstateFactoryReadContract.realEstateIdToAddress(
+            id.toNumber()
+          );
       } catch (e) {
         console.log(e);
       }
@@ -50,7 +51,8 @@ export default function Home() {
         const { realEstateReadContract } = await getRealEstateContract(
           realEstateAddress
         );
-        let realEstateDetails = await realEstateReadContract.getRealEstateDetails();
+        let realEstateDetails =
+          await realEstateReadContract.getRealEstateDetails();
         // let eventStatus = await realEstateReadContract.eventStatus();
 
         let realEstateData = {

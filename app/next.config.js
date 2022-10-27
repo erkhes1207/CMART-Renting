@@ -7,6 +7,11 @@ const nextConfig = {
 module.exports = {
   nextConfig,
   images: {
-    domains: ["assets.stickpng.com", "a0.muscache.com", "images.pexels.com"],
+    domains: [
+      "assets.stickpng.com",
+      "a0.muscache.com",
+      "images.pexels.com",
+      "upload.wikimedia.org",
+    ],
   },
 };

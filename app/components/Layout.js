@@ -2,9 +2,9 @@ import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div className='flex flex-col w-full h-full'>
+    <div className='flex flex-col w-full h-screen'>
       <Navbar />
-      <div className='mt-5'>{children}</div>
+      <div>{children}</div>
     </div>
   );
 };
