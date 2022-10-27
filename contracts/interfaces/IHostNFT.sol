@@ -10,6 +10,9 @@ import "../structs/UserReviews.sol";
 
 interface IHostNFT is IERC165 {
     
+    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
+    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
+    event ApprovalForAll(address indexed owner, address indexed operator, bool approved);
     event hostMinted (address indexed _to, uint256 indexed _tokenId);
     event hostBurned (uint256 indexed _tokenId);
     event hostGotReviewed (address indexed _host, UserReviews);
@@ -25,5 +28,35 @@ interface IHostNFT is IERC165 {
     function reviewFromHost(address _host, UserReviews calldata _userReviews) external;
 
     function reviewFromTenant(address _host, UserReviews calldata _userReviews) external;
+    
+    function balanceOf(address owner) external view returns (uint256 balance);
 
+    function ownerOf(uint256 tokenId) external view returns (address owner);
+
+    function approve(address to, uint256 tokenId) external;
+
+    function setApprovalForAll(address operator, bool _approved) external;
+
+    function getApproved(uint256 tokenId) external view returns (address operator);
+
+    function isApprovedForAll(address owner, address operator) external view returns (bool);
+
+    function safeTransferFrom(
+        address from,
+        address to,
+        uint256 tokenId,
+        bytes calldata data
+    ) external;
+
+    function safeTransferFrom(
+        address from,
+        address to,
+        uint256 tokenId
+    ) external;
+
+    function transferFrom(
+        address from,
+        address to,
+        uint256 tokenId
+    ) external;
 }

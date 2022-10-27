@@ -1,26 +1,23 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "@openzeppelin/contracts/access/AccessControl.sol";
 import "./functionality/RealEstate.sol";
 
 import "./structs/RealEstateDetails.sol";
 // import "./structs/RealEstateNftDetails.sol";
 
-import "../contracts/HostFactory.sol";
 import "./interfaces/IHostNFT.sol";
 
-contract RealEstateFactory is AccessControl {
+contract RealEstateFactory {
   mapping(address => uint[]) public addressToHostRealEstateIds;
   mapping(uint => address) public realEstateIdToAddress;
 
   uint[] public realEstateIds;
   uint public realEstateId;
 
-  HostFactory public hostFactory;
-  HostNFT public hostNft;
+  IHostNFT public hostNft;
 
-  RealEstateDetails[] public realEstates;
+  RealEstateDetails[] realEstates;
 
   event RealEstateCreated (
     uint indexed realEstateId,
@@ -29,15 +26,14 @@ contract RealEstateFactory is AccessControl {
   );
 
   constructor(address _hostNft) {
-    _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
-    hostNft = HostNFT(_hostNft);
+    hostNft = IHostNFT(_hostNft);
 
     realEstateId = 1;
   }
 
   function createRealEstate(
     RealEstateDetails calldata _realEstateDetails
-  ) isHost() external {
+  ) external {
     require(hostNft.balanceOf(msg.sender) > 0,"USER ISN'T HOST");
 
     RealEstate _realEstate = new RealEstate(
@@ -70,15 +66,6 @@ contract RealEstateFactory is AccessControl {
 
   function getRealEstateDetails(uint _realEstateId) external view returns(RealEstateDetails memory) {
     return realEstates[_realEstateId];
-  }
-
-  function getRealEstatesLength() external view returns(uint) {
-    return realEstateIds.length;
-  }
-
-  modifier isHost(){
-    require(hostNft.balanceOf(msg.sender) > 0,"NOT HOST");
-    _;
   }
 
 }

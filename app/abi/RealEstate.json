@@ -3,7 +3,7 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_organizer",
+        "name": "_creator",
         "type": "address"
       },
       {
@@ -144,6 +144,19 @@
   },
   {
     "inputs": [],
+    "name": "creator",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "getBalance",
     "outputs": [
       {
@@ -277,19 +290,6 @@
     "outputs": [
       {
         "internalType": "contract RealEstateNFT",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "organizer",
-    "outputs": [
-      {
-        "internalType": "address",
         "name": "",
         "type": "address"
       }

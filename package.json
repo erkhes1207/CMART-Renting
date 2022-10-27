@@ -21,6 +21,8 @@
     "@babel/preset-env": "^7.19.4"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.7.3"
+    "@openzeppelin/contracts": "^4.7.3",
+    "dotenv": "^16.0.3",
+    "hardhat-abi-exporter": "^2.10.1"
   }
 }
