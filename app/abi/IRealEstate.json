@@ -45,20 +45,20 @@
       {
         "components": [
           {
-            "internalType": "enum RealEstateType",
-            "name": "realEstateType",
-            "type": "uint8"
-          },
-          {
-            "internalType": "int256",
-            "name": "roomCount",
-            "type": "int256"
-          },
-          {
             "components": [
               {
                 "internalType": "string",
-                "name": "country",
+                "name": "khot",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "duureg",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "khoroo",
                 "type": "string"
               },
               {
@@ -68,22 +68,12 @@
               },
               {
                 "internalType": "string",
-                "name": "aptSuite",
+                "name": "orts",
                 "type": "string"
               },
               {
                 "internalType": "string",
-                "name": "city",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "state",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "zipCode",
+                "name": "toot",
                 "type": "string"
               }
             ],
@@ -92,35 +82,18 @@
             "type": "tuple"
           },
           {
-            "components": [
-              {
-                "internalType": "int256",
-                "name": "guests",
-                "type": "int256"
-              },
-              {
-                "internalType": "int256",
-                "name": "beds",
-                "type": "int256"
-              },
-              {
-                "internalType": "int256",
-                "name": "bedrooms",
-                "type": "int256"
-              },
-              {
-                "internalType": "int256",
-                "name": "bathrooms",
-                "type": "int256"
-              }
-            ],
-            "internalType": "struct GuestDetail",
-            "name": "guests",
-            "type": "tuple"
+            "internalType": "int256",
+            "name": "roomCount",
+            "type": "int256"
+          },
+          {
+            "internalType": "int256",
+            "name": "mkv",
+            "type": "int256"
           },
           {
             "internalType": "string",
-            "name": "photos",
+            "name": "photo",
             "type": "string"
           },
           {
@@ -136,6 +109,11 @@
           {
             "internalType": "int256",
             "name": "price",
+            "type": "int256"
+          },
+          {
+            "internalType": "int256",
+            "name": "payment",
             "type": "int256"
           }
         ],
@@ -194,7 +172,17 @@
             "components": [
               {
                 "internalType": "string",
-                "name": "country",
+                "name": "khot",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "duureg",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "khoroo",
                 "type": "string"
               },
               {
@@ -204,22 +192,12 @@
               },
               {
                 "internalType": "string",
-                "name": "aptSuite",
+                "name": "orts",
                 "type": "string"
               },
               {
                 "internalType": "string",
-                "name": "city",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "state",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "zipCode",
+                "name": "toot",
                 "type": "string"
               }
             ],

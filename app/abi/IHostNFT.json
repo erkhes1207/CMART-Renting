@@ -268,7 +268,17 @@
             "components": [
               {
                 "internalType": "string",
-                "name": "country",
+                "name": "khot",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "duureg",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "khoroo",
                 "type": "string"
               },
               {
@@ -278,22 +288,12 @@
               },
               {
                 "internalType": "string",
-                "name": "aptSuite",
+                "name": "orts",
                 "type": "string"
               },
               {
                 "internalType": "string",
-                "name": "city",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "state",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "zipCode",
+                "name": "toot",
                 "type": "string"
               }
             ],
@@ -411,7 +411,17 @@
             "components": [
               {
                 "internalType": "string",
-                "name": "country",
+                "name": "khot",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "duureg",
+                "type": "string"
+              },
+              {
+                "internalType": "string",
+                "name": "khoroo",
                 "type": "string"
               },
               {
@@ -421,22 +431,12 @@
               },
               {
                 "internalType": "string",
-                "name": "aptSuite",
+                "name": "orts",
                 "type": "string"
               },
               {
                 "internalType": "string",
-                "name": "city",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "state",
-                "type": "string"
-              },
-              {
-                "internalType": "string",
-                "name": "zipCode",
+                "name": "toot",
                 "type": "string"
               }
             ],
